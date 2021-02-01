@@ -29,7 +29,7 @@ contract Marketplace {
         string category;
         address evaluator;
         uint freelancersNr;
-        mapping (uint => freelancerShare)
+        mapping (uint => freelancerShare) shares;
         States currentState;
     }
 
