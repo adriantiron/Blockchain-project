@@ -1,4 +1,5 @@
-pragma solidity >=0.7.0 <=0.7.3;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.7.0 <=0.7.5;
 
 contract Marketplace {
 
@@ -29,7 +30,7 @@ contract Marketplace {
         string category;
         address evaluator;
         uint freelancersNr;
-        mapping (uint => freelancerShare)
+        mapping (uint => freelancerShare) freelancingShares;
         States currentState;
     }
 
