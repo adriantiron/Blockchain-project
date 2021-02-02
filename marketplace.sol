@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.7.0 <=0.7.5;
+pragma solidity >=0.6.0 <0.8.0;
 
-import "./Manager.sol";
-import "./Freelancer.sol";
-import "./Evaluator.sol";
-import "./Financer.sol";
+import "./GenericUser.sol";
+import "./Factory.sol";
 
 contract Marketplace {
 
@@ -44,7 +42,7 @@ contract Marketplace {
     }
 
 
-    constructor(){
+    constructor(Factory _uf){
         owner = msg.sender;
         
         // choose addresses from the remix deploy & run tab
@@ -64,39 +62,22 @@ contract Marketplace {
         address financer_1_addr = 0x583031D1113aD414F02576BD6afaBfb302140225;
         address financer_2_addr = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
         
-        // create user contracts and store them in users_contracts
-        users_contracts[manager_addr] = new Manager(manager_addr, "manager");
+        // create user contracts and store
+        storeUser(_uf.new_manager(manager_addr, "manager"));
         
-        users_contracts[freelancer_0_addr] = new Freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency");
-        users_contracts[freelancer_1_addr] = new Freelancer(freelancer_1_addr, "freelancer-1", "Games");
-        users_contracts[freelancer_2_addr] = new Freelancer(freelancer_2_addr, "freelancer-2", "Games");
-        users_contracts[freelancer_3_addr] = new Freelancer(freelancer_3_addr, "freelancer-3", "Cryptocurrency");
+        storeUser(_uf.new_freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency"));
+        storeUser(_uf.new_freelancer(freelancer_1_addr, "freelancer-1", "Games"));
+        storeUser(_uf.new_freelancer(freelancer_2_addr, "freelancer-2", "Games"));
+        storeUser(_uf.new_freelancer(freelancer_3_addr, "freelancer-3", "Cryptocurrency"));
         
-        users_contracts[evaluator_0_addr] = new Evaluator(evaluator_0_addr, "evaluator-0", "Games");
-        users_contracts[evaluator_1_addr] = new Evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency");
-        users_contracts[evaluator_2_addr] = new Evaluator(evaluator_2_addr, "evaluator-2", "Games");
-        users_contracts[evaluator_3_addr] = new Evaluator(evaluator_3_addr, "evaluator-3", "Cryptocurrency");
+        storeUser(_uf.new_evaluator(evaluator_0_addr, "evaluator-0", "Games"));
+        storeUser(_uf.new_evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency"));
+        storeUser(_uf.new_evaluator(evaluator_2_addr, "evaluator-2", "Games"));
+        storeUser(_uf.new_evaluator(evaluator_3_addr, "evaluator-3", "Cryptocurrency"));
         
-        users_contracts[financer_0_addr] = new Financer(financer_0_addr, "financer-0");
-        users_contracts[financer_1_addr] = new Financer(financer_1_addr, "financer-1");
-        users_contracts[financer_2_addr] = new Financer(financer_2_addr, "financer-2");
-        
-        // put users in users_structs
-        users_structs.push(createStruct(manager_addr));
-        
-        users_structs.push(createStruct(freelancer_0_addr));
-        users_structs.push(createStruct(freelancer_1_addr));
-        users_structs.push(createStruct(freelancer_2_addr));
-        users_structs.push(createStruct(freelancer_3_addr));
-        
-        users_structs.push(createStruct(evaluator_0_addr));
-        users_structs.push(createStruct(evaluator_1_addr));
-        users_structs.push(createStruct(evaluator_2_addr));
-        users_structs.push(createStruct(evaluator_3_addr));
-        
-        users_structs.push(createStruct(financer_0_addr));
-        users_structs.push(createStruct(financer_1_addr));
-        users_structs.push(createStruct(financer_2_addr));
+        storeUser(_uf.new_financer(financer_0_addr, "financer-0"));
+        storeUser(_uf.new_financer(financer_1_addr, "financer-1"));
+        storeUser(_uf.new_financer(financer_2_addr, "financer-2"));
     }
     
     function createStruct(address _addr) private view returns (genericUser memory){
@@ -108,5 +89,12 @@ contract Marketplace {
         gu.category = users_contracts[_addr].category();
         
         return gu;
+    }
+    
+    function storeUser(GenericUser _gu) private {
+        address _useraddr = _gu.addr();
+        
+        users_contracts[_useraddr] = _gu;
+        users_structs.push(createStruct(_useraddr));
     }
 }
