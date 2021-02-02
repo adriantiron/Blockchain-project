@@ -3,14 +3,14 @@ pragma solidity >=0.6.0 <0.8.0;
 
 import "./GenericUser.sol";
 import "./Factory.sol";
+import "./ERC20token_manager.sol";
 
 contract Marketplace {
 
-    address owner;
     mapping(address => GenericUser) private users_contracts;
     genericUser[] private users_structs;
     product[] private products;
-    
+    ERC20token_manager private tkn_mng;
     
     enum States{ defined, started, finished}
 
@@ -42,8 +42,8 @@ contract Marketplace {
     }
 
 
-    constructor(Factory _uf){
-        owner = msg.sender;
+    constructor (Factory _uf, ERC20token_manager _tkn_mng){
+        tkn_mng = _tkn_mng;
         
         // choose addresses from the remix deploy & run tab
         address manager_addr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
@@ -63,21 +63,21 @@ contract Marketplace {
         address financer_2_addr = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
         
         // create user contracts and store
-        storeUser(_uf.new_manager(manager_addr, "manager"));
+        storeAndAllocUser(_uf.new_manager(manager_addr, "manager"), 2000);
         
-        storeUser(_uf.new_freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency"));
-        storeUser(_uf.new_freelancer(freelancer_1_addr, "freelancer-1", "Games"));
-        storeUser(_uf.new_freelancer(freelancer_2_addr, "freelancer-2", "Games"));
-        storeUser(_uf.new_freelancer(freelancer_3_addr, "freelancer-3", "Cryptocurrency"));
+        storeAndAllocUser(_uf.new_freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency"), 2500);
+        storeAndAllocUser(_uf.new_freelancer(freelancer_1_addr, "freelancer-1", "Games"), 3000);
+        storeAndAllocUser(_uf.new_freelancer(freelancer_2_addr, "freelancer-2", "Games"), 7500);
+        storeAndAllocUser(_uf.new_freelancer(freelancer_3_addr, "freelancer-3", "Cryptocurrency"), 4400);
         
-        storeUser(_uf.new_evaluator(evaluator_0_addr, "evaluator-0", "Games"));
-        storeUser(_uf.new_evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency"));
-        storeUser(_uf.new_evaluator(evaluator_2_addr, "evaluator-2", "Games"));
-        storeUser(_uf.new_evaluator(evaluator_3_addr, "evaluator-3", "Cryptocurrency"));
+        storeAndAllocUser(_uf.new_evaluator(evaluator_0_addr, "evaluator-0", "Games"), 700);
+        storeAndAllocUser(_uf.new_evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency"), 950);
+        storeAndAllocUser(_uf.new_evaluator(evaluator_2_addr, "evaluator-2", "Games"), 1100);
+        storeAndAllocUser(_uf.new_evaluator(evaluator_3_addr, "evaluator-3", "Cryptocurrency"), 500);
         
-        storeUser(_uf.new_financer(financer_0_addr, "financer-0"));
-        storeUser(_uf.new_financer(financer_1_addr, "financer-1"));
-        storeUser(_uf.new_financer(financer_2_addr, "financer-2"));
+        storeAndAllocUser(_uf.new_financer(financer_0_addr, "financer-0"), 30000);
+        storeAndAllocUser(_uf.new_financer(financer_1_addr, "financer-1"), 25000);
+        storeAndAllocUser(_uf.new_financer(financer_2_addr, "financer-2"), 50000);
     }
     
     function createStruct(address _addr) private view returns (genericUser memory){
@@ -91,10 +91,28 @@ contract Marketplace {
         return gu;
     }
     
-    function storeUser(GenericUser _gu) private {
+    function storeAndAllocUser(GenericUser _gu, uint _alloc_amount) private {
         address _useraddr = _gu.addr();
         
         users_contracts[_useraddr] = _gu;
         users_structs.push(createStruct(_useraddr));
+        tkn_mng.transfer(_useraddr, _alloc_amount);
+    }
+    
+    function getUserProfile(address _addr) public view returns (string memory name, string memory role, uint reputation, uint balance, string memory category) {
+        string memory str_role;
+        uint256 int_role = users_contracts[_addr].role();
+        
+        if (int_role == 0){
+            str_role = "Manager";
+        }else if (int_role == 1){
+            str_role = "Freelancer";
+        }else if (int_role == 2){
+            str_role = "Evaluator";
+        }else{
+            str_role = "Financer";
+        }
+        
+        return (users_contracts[_addr].name(), str_role, users_contracts[_addr].rep(), tkn_mng.getBalanceOf(_addr), users_contracts[_addr].category());
     }
 }

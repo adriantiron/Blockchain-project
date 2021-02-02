@@ -7,7 +7,7 @@ contract ERC20token_manager{
 
     ERC20token public stdToken;
     
-    constructor () public {
+    constructor () {
         stdToken = new ERC20token(10000);
     }
     
