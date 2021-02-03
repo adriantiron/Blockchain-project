@@ -28,4 +28,5 @@ contract Factory {
         Financer financer = new Financer(_addr, _name);
         return financer;
     }
+    
 }

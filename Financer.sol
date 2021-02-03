@@ -7,7 +7,9 @@ contract Financer is GenericUser{
     
     constructor (address _addr, string memory _name){
         addr = _addr;
-        role = 3;
+        role = uint(Roles.Financer);
         name = _name;
+        rep = 0;
+        category = "";
     }
 }

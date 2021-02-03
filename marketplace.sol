@@ -4,15 +4,19 @@ pragma solidity >=0.6.0 <0.8.0;
 import "./GenericUser.sol";
 import "./Factory.sol";
 import "./ERC20token_manager.sol";
+import "./Product.sol";
 
 contract Marketplace {
 
     mapping(address => GenericUser) private users_contracts;
+    mapping(uint => Product) private products_contracts;
     genericUser[] private users_structs;
-    product[] private products;
+    prodStruct[] private products_structs;
     ERC20token_manager private tkn_mng;
-    
+    uint public productsNu = 0;
+        
     enum States{ defined, started, finished}
+    enum Roles{ Manager, Freelancer, Evaluator, Financer}
 
     // Role: 0 - manager | 1 - freelancer | 2 - evaluator | 3 - financer
     struct genericUser{
@@ -28,24 +32,20 @@ contract Marketplace {
         uint share;
     }
 
-    struct product{
+    struct prodStruct{
         uint product_id;
         address manager_address;
         string description;
         uint dev;
         uint rev;
         string category;
-        address evaluator;
-        uint freelancersNr;
-        mapping (uint => freelancerShare) freelancingShares;
         States currentState;
     }
-
 
     constructor (Factory _uf, ERC20token_manager _tkn_mng){
         tkn_mng = _tkn_mng;
         
-        // choose addresses from the remix deploy & run tab
+        // REMIX JavaScript VM
         address manager_addr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
         
         address freelancer_0_addr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
@@ -61,6 +61,23 @@ contract Marketplace {
         address financer_0_addr = 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB;
         address financer_1_addr = 0x583031D1113aD414F02576BD6afaBfb302140225;
         address financer_2_addr = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
+        
+        // Ganache
+        /*address manager_addr = 0x9D5818ac8D429B4aB51Ff0e40ec83790755eD3a5;
+        
+        address freelancer_0_addr = 0xc9980FF6e1370dc7EFA5607C662ebB7953dEe231;
+        address freelancer_1_addr = 0xC2087837E54dDeD0e57DD0cF74826680A2E9D349;
+        address freelancer_2_addr = 0xc06D847E919bF34507c866260884B4B415171bA3;
+        address freelancer_3_addr = 0xd1f079782484620250afdAbd5E85F793601B9Bc3;
+        
+        address evaluator_0_addr = 0x3F0C6e33b12e7144450B2785269e27FAFD86a28c;
+        address evaluator_1_addr = 0x049Eb93680C7b8b98BaC6a54D874910fd88d4564;
+        address evaluator_2_addr = 0xeF43023060eCa4Aad93b4368322Ffe823770926C;
+        address evaluator_3_addr = 0xB3c81f904B6DfDed618BbD38BEd3eAF6CaE42286;
+        
+        address financer_0_addr = 0x2e9ec3A179D45B767a2b7F251b13C8038afBf8A7;
+        address financer_1_addr = 0x4EFE3F7AE0aF8C1E33806B76f44fa041650CEce2;
+        address financer_2_addr = 0x39565f1a1e5058465C00558A1734b92051E5dD5f;*/
         
         // create user contracts and store
         storeAndAllocUser(_uf.new_manager(manager_addr, "manager"), 2000);
@@ -80,7 +97,12 @@ contract Marketplace {
         storeAndAllocUser(_uf.new_financer(financer_2_addr, "financer-2"), 50000);
     }
     
-    function createStruct(address _addr) private view returns (genericUser memory){
+    modifier onlyManager {
+        require(users_contracts[msg.sender].role() == uint(Roles.Manager));
+        _;
+    }
+    
+    function createUserStruct(address _addr) private view returns (genericUser memory){
         genericUser memory gu;
         gu.addr = users_contracts[_addr].addr();
         gu.role = users_contracts[_addr].role();
@@ -91,17 +113,43 @@ contract Marketplace {
         return gu;
     }
     
+    function createProductStruct(uint _prod_id) private view returns (prodStruct memory){
+        prodStruct memory ps;
+        ps.product_id = products_contracts[_prod_id].product_id();
+        ps.manager_address = products_contracts[_prod_id].manager_address();
+        ps.description = products_contracts[_prod_id].description();
+        ps.dev = products_contracts[_prod_id].dev();
+        ps.rev = products_contracts[_prod_id].rev();
+        ps.category = products_contracts[_prod_id].category();
+        ps.currentState = States(products_contracts[_prod_id].getState());
+        
+        return ps;
+    }
+    
     function storeAndAllocUser(GenericUser _gu, uint _alloc_amount) private {
         address _useraddr = _gu.addr();
         
         users_contracts[_useraddr] = _gu;
-        users_structs.push(createStruct(_useraddr));
+        users_structs.push(createUserStruct(_useraddr));
         tkn_mng.transfer(_useraddr, _alloc_amount);
+    }
+    
+    function storeProduct(Product _pr) private {
+        uint prod_id = _pr.product_id();
+        
+        products_contracts[prod_id] = _pr;
+        products_structs.push(createProductStruct(prod_id));
+    }
+    
+    function init_product(string memory _description, uint _dev, uint _rev, string memory _category) public onlyManager {
+        Product product = new Product(productsNu, msg.sender, _description, _dev, _rev, _category);
+        productsNu++;
+        storeProduct(product);
     }
     
     function getUserProfile(address _addr) public view returns (string memory name, string memory role, uint reputation, uint balance, string memory category) {
         string memory str_role;
-        uint256 int_role = users_contracts[_addr].role();
+        uint256 int_role = uint(users_contracts[_addr].role());
         
         if (int_role == 0){
             str_role = "Manager";
@@ -114,5 +162,20 @@ contract Marketplace {
         }
         
         return (users_contracts[_addr].name(), str_role, users_contracts[_addr].rep(), tkn_mng.getBalanceOf(_addr), users_contracts[_addr].category());
+    }
+    
+    function getProductDetails(uint _prod_id) public view returns (address manager_address, string memory description, uint dev, uint rev, string memory category, string memory state) {
+        string memory str_state;
+        uint int_state = products_contracts[_prod_id].getState();
+        
+        if (int_state == 0){
+            str_state = "Defined";
+        }else if (int_state == 1){
+            str_state = "Started";
+        }else{
+            str_state = "Finished";
+        }
+        
+        return (products_contracts[_prod_id].manager_address(), products_contracts[_prod_id].description(), products_contracts[_prod_id].dev(), products_contracts[_prod_id].rev(), products_contracts[_prod_id].category(), str_state);
     }
 }

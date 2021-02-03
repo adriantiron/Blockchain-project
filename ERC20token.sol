@@ -6,6 +6,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.3.0/contr
 contract ERC20token is ERC20{
  
     constructor (uint mint_amount) ERC20("StandardERC20", "ERC"){
+        _setupDecimals(6);
         _mint(msg.sender, mint_amount * (10 ** uint256(decimals())));
     }
 }
