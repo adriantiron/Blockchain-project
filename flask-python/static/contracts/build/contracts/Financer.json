@@ -97,27 +97,27 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"category\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_down\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_up\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"role\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol\":\"Financer\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol\":{\"keccak256\":\"0xf6516983f806e69bac0b53c1df2d5232b5e060d8b6d5367265d5a175e9d8097d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c84b6363630841b004cddb4224ce33090c95ec4b2b74b019b25487f4b087ad1d\",\"dweb:/ipfs/QmNR4Fhfxjb6n2QUZHdzkWaoCNKt1LNaY6i6gcsprTgdJT\"]},\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol\":{\"keccak256\":\"0xef79d47ff50559fd7848a8bb9b15b23b6033d6b2ddd40ce39d4e37a9ee04eb54\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://54026095148db76ea53d0a4a6569f3aeb406310a384421233250fe30c0d2f1e2\",\"dweb:/ipfs/QmXQ7ay6gJTy8MzZ7EE9NaTartcBaCrYx96ztPfoKBDVAU\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161048e38038061048e8339818101604052604081101561003357600080fd5b81516020830180516040519294929383019291908464010000000082111561005a57600080fd5b90830190602082018581111561006f57600080fd5b825164010000000081118282018810171561008957600080fd5b82525081516020918201929091019080838360005b838110156100b657818101518382015260200161009e565b50505050905090810190601f1680156100e35780820380516001836020036101000a031916815260200191505b506040525050600080546001600160a01b0319166001600160a01b0385161790555060036001819055815161011d91906020840190610125565b5050506101b8565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016657805160ff1916838001178555610193565b82800160010185558215610193579182015b82811115610193578251825591602001919060010190610178565b5061019f9291506101a3565b5090565b5b8082111561019f57600081556001016101a4565b6102c7806101c76000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea26469706673582212205d8fc4db61b7ab012e53f165d1be8e5609339fc9b5ce45d2535e6bf0a965421b64736f6c63430007000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea26469706673582212205d8fc4db61b7ab012e53f165d1be8e5609339fc9b5ce45d2535e6bf0a965421b64736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"category\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_down\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_up\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"role\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol\":\"Financer\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol\":{\"keccak256\":\"0x52a06162035a2f414b9e0ae2f3d6c77a7c35543e6a816fe54f508483abd57a4e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8d7f70e1f77c6200f32da706eaffb3d78b973f66add642374fbc0b01e96127d1\",\"dweb:/ipfs/QmYJwKA1WgQiUSweGxygfgvpyJm5zNq8wb4GpyURHy9wFj\"]},\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol\":{\"keccak256\":\"0x687336aeee9991dbbb6b28b287bbb3b47196ed3aa45a11b7d4aeefcf07328f57\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1db7e217d75b6b6445c3de958ba45a9bf46c34f40a202b4f385858d921202109\",\"dweb:/ipfs/QmVeLWTMq4kaoJx5L28BfDJxNeVB7C89wdHnEWvDbhiPM4\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516104b23803806104b28339818101604052604081101561003357600080fd5b81516020830180516040519294929383019291908464010000000082111561005a57600080fd5b90830190602082018581111561006f57600080fd5b825164010000000081118282018810171561008957600080fd5b82525081516020918201929091019080838360005b838110156100b657818101518382015260200161009e565b50505050905090810190601f1680156100e35780820380516001836020036101000a031916815260200191505b506040525050600080546001600160a01b0319166001600160a01b038516179055506003600155805161011d906003906020840190610149565b50600060028190556040805160208101918290528290526101419160049190610149565b5050506101dc565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061018a57805160ff19168380011785556101b7565b828001600101855582156101b7579182015b828111156101b757825182559160200191906001019061019c565b506101c39291506101c7565b5090565b5b808211156101c357600081556001016101c8565b6102c7806101eb6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea2646970667358221220be54575848698a461deac930d8566d50b7faa491c2cf757a1e8e510c49a7d44b64736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea2646970667358221220be54575848698a461deac930d8566d50b7faa491c2cf757a1e8e510c49a7d44b64736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "99:169:4:-:0;;;144:121;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;144:121:4;;;;;;;;;;-1:-1:-1;144:121:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;144:121:4;;-1:-1:-1;;203:4:4;:12;;-1:-1:-1;;;;;;203:12:4;-1:-1:-1;;;;;203:12:4;;;;;-1:-1:-1;233:1:4;-1:-1:-1;226:8:4;;;245:12;;;;233:1;245:12;;;;;:::i;:::-;;144:121;;99:169;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;99:169:4;;;-1:-1:-1;99:169:4;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "99:169:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;176:18:6;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:16;;;:::i;:::-;;;;;;;;;;;;;;;;105:19;;;:::i;:::-;;;;-1:-1:-1;;;;;105:19:6;;;;;;;;;;;;;;236:76;;;:::i;:::-;;154:15;;;:::i;324:77::-;;;:::i;201:22::-;;;:::i;176:18::-;;;;;;;;;;;;;;;-1:-1:-1;;176:18:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;131:16::-;;;;:::o;105:19::-;;;-1:-1:-1;;;;;105:19:6;;:::o;236:76::-;282:2;276:3;;:8;272:32;;;299:3;:5;;;;;;272:32;236:76::o;154:15::-;;;;:::o;324:77::-;372:1;366:3;;:7;362:31;;;388:3;:5;;-1:-1:-1;;388:5:6;;;324:77::o;201:22::-;;;;;;;;;;;;;;;-1:-1:-1;;201:22:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.8.0;\r\n\r\nimport \"./GenericUser.sol\";\r\n\r\ncontract Financer is GenericUser{\r\n    \r\n    constructor (address _addr, string memory _name){\r\n        addr = _addr;\r\n        role = 3;\r\n        name = _name;\r\n    }\r\n}",
+  "sourceMap": "99:230:4:-:0;;;144:182;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;144:182:4;;;;;;;;;;-1:-1:-1;144:182:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;144:182:4;;-1:-1:-1;;203:4:4;:12;;-1:-1:-1;;;;;;203:12:4;-1:-1:-1;;;;;203:12:4;;;;;-1:-1:-1;238:14:4;-1:-1:-1;226:27:4;;;264:12;;;;238:14;264:12;;;;;:::i;:::-;-1:-1:-1;293:1:4;287:3;:7;;;305:13;;;;;;;;;;;;;;;:8;;:13;;:::i;:::-;;144:182;;99:230;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;99:230:4;;;-1:-1:-1;99:230:4;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "99:230:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;176:18:6;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:16;;;:::i;:::-;;;;;;;;;;;;;;;;105:19;;;:::i;:::-;;;;-1:-1:-1;;;;;105:19:6;;;;;;;;;;;;;;301:76;;;:::i;:::-;;154:15;;;:::i;389:77::-;;;:::i;201:22::-;;;:::i;176:18::-;;;;;;;;;;;;;;;-1:-1:-1;;176:18:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;131:16::-;;;;:::o;105:19::-;;;-1:-1:-1;;;;;105:19:6;;:::o;301:76::-;347:2;341:3;;:8;337:32;;;364:3;:5;;;;;;337:32;301:76::o;154:15::-;;;;:::o;389:77::-;437:1;431:3;;:7;427:31;;;453:3;:5;;-1:-1:-1;;453:5:6;;;389:77::o;201:22::-;;;;;;;;;;;;;;;-1:-1:-1;;201:22:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.8.0;\r\n\r\nimport \"./GenericUser.sol\";\r\n\r\ncontract Financer is GenericUser{\r\n    \r\n    constructor (address _addr, string memory _name){\r\n        addr = _addr;\r\n        role = uint(Roles.Financer);\r\n        name = _name;\r\n        rep = 0;\r\n        category = \"\";\r\n    }\r\n}",
   "sourcePath": "E:\\PROJECTS\\Blockchain-project\\flask-python\\static\\contracts\\contracts\\Financer.sol",
   "ast": {
     "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol",
     "exportedSymbols": {
       "Financer": [
-        260
+        280
       ]
     },
-    "id": 261,
+    "id": 281,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 236,
+        "id": 244,
         "literals": [
           "solidity",
           ">=",
@@ -133,10 +133,10 @@
       {
         "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol",
         "file": "./GenericUser.sol",
-        "id": 237,
+        "id": 245,
         "nodeType": "ImportDirective",
-        "scope": 261,
-        "sourceUnit": 332,
+        "scope": 281,
+        "sourceUnit": 361,
         "src": "68:27:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -148,56 +148,56 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 238,
+              "id": 246,
               "name": "GenericUser",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 331,
+              "referencedDeclaration": 360,
               "src": "120:11:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_GenericUser_$331",
+                "typeIdentifier": "t_contract$_GenericUser_$360",
                 "typeString": "contract GenericUser"
               }
             },
-            "id": 239,
+            "id": 247,
             "nodeType": "InheritanceSpecifier",
             "src": "120:11:4"
           }
         ],
         "contractDependencies": [
-          331
+          360
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 260,
+        "id": 280,
         "linearizedBaseContracts": [
-          260,
-          331
+          280,
+          360
         ],
         "name": "Financer",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 258,
+              "id": 278,
               "nodeType": "Block",
-              "src": "192:73:4",
+              "src": "192:134:4",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 248,
+                    "id": 256,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 246,
+                      "id": 254,
                       "name": "addr",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 300,
+                      "referencedDeclaration": 324,
                       "src": "203:4:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -208,11 +208,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 247,
+                      "id": 255,
                       "name": "_addr",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 241,
+                      "referencedDeclaration": 249,
                       "src": "210:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -225,25 +225,25 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 249,
+                  "id": 257,
                   "nodeType": "ExpressionStatement",
                   "src": "203:12:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 252,
+                    "id": 264,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 250,
+                      "id": 258,
                       "name": "role",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 302,
+                      "referencedDeclaration": 326,
                       "src": "226:4:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -254,48 +254,107 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "33",
-                      "id": 251,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 261,
+                            "name": "Roles",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 337,
+                            "src": "238:5:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_Roles_$337_$",
+                              "typeString": "type(enum GenericUser.Roles)"
+                            }
+                          },
+                          "id": 262,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "Financer",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "238:14:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Roles_$337",
+                            "typeString": "enum GenericUser.Roles"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_enum$_Roles_$337",
+                            "typeString": "enum GenericUser.Roles"
+                          }
+                        ],
+                        "id": 260,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "233:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        },
+                        "typeName": {
+                          "id": 259,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "233:4:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": null,
+                            "typeString": null
+                          }
+                        }
+                      },
+                      "id": 263,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
-                      "kind": "number",
+                      "kind": "typeConversion",
                       "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "233:1:4",
-                      "subdenomination": null,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "233:20:4",
+                      "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_3_by_1",
-                        "typeString": "int_const 3"
-                      },
-                      "value": "3"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "226:8:4",
+                    "src": "226:27:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 253,
+                  "id": 265,
                   "nodeType": "ExpressionStatement",
-                  "src": "226:8:4"
+                  "src": "226:27:4"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 256,
+                    "id": 268,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 254,
+                      "id": 266,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 306,
-                      "src": "245:4:4",
+                      "referencedDeclaration": 330,
+                      "src": "264:4:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -305,31 +364,133 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 255,
+                      "id": 267,
                       "name": "_name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 243,
-                      "src": "252:5:4",
+                      "referencedDeclaration": 251,
+                      "src": "271:5:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "245:12:4",
+                    "src": "264:12:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 257,
+                  "id": 269,
                   "nodeType": "ExpressionStatement",
-                  "src": "245:12:4"
+                  "src": "264:12:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 272,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 270,
+                      "name": "rep",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 328,
+                      "src": "287:3:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 271,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "293:1:4",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "287:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 273,
+                  "nodeType": "ExpressionStatement",
+                  "src": "287:7:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 276,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 274,
+                      "name": "category",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 332,
+                      "src": "305:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "",
+                      "id": 275,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "316:2:4",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                        "typeString": "literal_string \"\""
+                      },
+                      "value": ""
+                    },
+                    "src": "305:13:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 277,
+                  "nodeType": "ExpressionStatement",
+                  "src": "305:13:4"
                 }
               ]
             },
             "documentation": null,
-            "id": 259,
+            "id": 279,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -337,17 +498,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 244,
+              "id": 252,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 241,
+                  "id": 249,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 259,
+                  "scope": 279,
                   "src": "157:13:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -356,7 +517,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 240,
+                    "id": 248,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "157:7:4",
@@ -371,12 +532,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 243,
+                  "id": 251,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 259,
+                  "scope": 279,
                   "src": "172:19:4",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -385,7 +546,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 242,
+                    "id": 250,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:6:4",
@@ -401,30 +562,30 @@
               "src": "156:36:4"
             },
             "returnParameters": {
-              "id": 245,
+              "id": 253,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "192:0:4"
             },
-            "scope": 260,
-            "src": "144:121:4",
+            "scope": 280,
+            "src": "144:182:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 261,
-        "src": "99:169:4"
+        "scope": 281,
+        "src": "99:230:4"
       }
     ],
-    "src": "33:235:4"
+    "src": "33:296:4"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol",
       "exportedSymbols": {
         "Financer": [
-          260
+          280
         ]
       },
       "license": "MIT"
@@ -442,22 +603,22 @@
             ".0"
           ]
         },
-        "id": 236,
+        "id": 244,
         "name": "PragmaDirective",
         "src": "33:31:4"
       },
       {
         "attributes": {
-          "SourceUnit": 332,
+          "SourceUnit": 361,
           "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol",
           "file": "./GenericUser.sol",
-          "scope": 261,
+          "scope": 281,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 237,
+        "id": 245,
         "name": "ImportDirective",
         "src": "68:27:4"
       },
@@ -465,17 +626,17 @@
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            331
+            360
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            260,
-            331
+            280,
+            360
           ],
           "name": "Financer",
-          "scope": 261
+          "scope": 281
         },
         "children": [
           {
@@ -487,15 +648,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "GenericUser",
-                  "referencedDeclaration": 331,
+                  "referencedDeclaration": 360,
                   "type": "contract GenericUser"
                 },
-                "id": 238,
+                "id": 246,
                 "name": "UserDefinedTypeName",
                 "src": "120:11:4"
               }
             ],
-            "id": 239,
+            "id": 247,
             "name": "InheritanceSpecifier",
             "src": "120:11:4"
           },
@@ -510,7 +671,7 @@
               ],
               "name": "",
               "overrides": null,
-              "scope": 260,
+              "scope": 280,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "public"
@@ -524,7 +685,7 @@
                       "mutability": "mutable",
                       "name": "_addr",
                       "overrides": null,
-                      "scope": 259,
+                      "scope": 279,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -538,12 +699,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 240,
+                        "id": 248,
                         "name": "ElementaryTypeName",
                         "src": "157:7:4"
                       }
                     ],
-                    "id": 241,
+                    "id": 249,
                     "name": "VariableDeclaration",
                     "src": "157:13:4"
                   },
@@ -553,7 +714,7 @@
                       "mutability": "mutable",
                       "name": "_name",
                       "overrides": null,
-                      "scope": 259,
+                      "scope": 279,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -566,17 +727,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 242,
+                        "id": 250,
                         "name": "ElementaryTypeName",
                         "src": "172:6:4"
                       }
                     ],
-                    "id": 243,
+                    "id": 251,
                     "name": "VariableDeclaration",
                     "src": "172:19:4"
                   }
                 ],
-                "id": 244,
+                "id": 252,
                 "name": "ParameterList",
                 "src": "156:36:4"
               },
@@ -587,7 +748,7 @@
                   ]
                 },
                 "children": [],
-                "id": 245,
+                "id": 253,
                 "name": "ParameterList",
                 "src": "192:0:4"
               },
@@ -612,11 +773,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 300,
+                              "referencedDeclaration": 324,
                               "type": "address",
                               "value": "addr"
                             },
-                            "id": 246,
+                            "id": 254,
                             "name": "Identifier",
                             "src": "203:4:4"
                           },
@@ -626,21 +787,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 241,
+                              "referencedDeclaration": 249,
                               "type": "address",
                               "value": "_addr"
                             },
-                            "id": 247,
+                            "id": 255,
                             "name": "Identifier",
                             "src": "210:5:4"
                           }
                         ],
-                        "id": 248,
+                        "id": 256,
                         "name": "Assignment",
                         "src": "203:12:4"
                       }
                     ],
-                    "id": 249,
+                    "id": 257,
                     "name": "ExpressionStatement",
                     "src": "203:12:4"
                   },
@@ -663,40 +824,104 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 302,
+                              "referencedDeclaration": 326,
                               "type": "uint256",
                               "value": "role"
                             },
-                            "id": 250,
+                            "id": 258,
                             "name": "Identifier",
                             "src": "226:4:4"
                           },
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "hexvalue": "33",
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
+                              "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "subdenomination": null,
-                              "token": "number",
-                              "type": "int_const 3",
-                              "value": "3"
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": true
                             },
-                            "id": 251,
-                            "name": "Literal",
-                            "src": "233:1:4"
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_Roles_$337",
+                                      "typeString": "enum GenericUser.Roles"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "name": "uint",
+                                      "type": null
+                                    },
+                                    "id": 259,
+                                    "name": "ElementaryTypeName",
+                                    "src": "233:4:4"
+                                  }
+                                ],
+                                "id": 260,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "233:4:4"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Financer",
+                                  "referencedDeclaration": null,
+                                  "type": "enum GenericUser.Roles"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 337,
+                                      "type": "type(enum GenericUser.Roles)",
+                                      "value": "Roles"
+                                    },
+                                    "id": 261,
+                                    "name": "Identifier",
+                                    "src": "238:5:4"
+                                  }
+                                ],
+                                "id": 262,
+                                "name": "MemberAccess",
+                                "src": "238:14:4"
+                              }
+                            ],
+                            "id": 263,
+                            "name": "FunctionCall",
+                            "src": "233:20:4"
                           }
                         ],
-                        "id": 252,
+                        "id": 264,
                         "name": "Assignment",
-                        "src": "226:8:4"
+                        "src": "226:27:4"
                       }
                     ],
-                    "id": 253,
+                    "id": 265,
                     "name": "ExpressionStatement",
-                    "src": "226:8:4"
+                    "src": "226:27:4"
                   },
                   {
                     "children": [
@@ -717,13 +942,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 306,
+                              "referencedDeclaration": 330,
                               "type": "string storage ref",
                               "value": "name"
                             },
-                            "id": 254,
+                            "id": 266,
                             "name": "Identifier",
-                            "src": "245:4:4"
+                            "src": "264:4:4"
                           },
                           {
                             "attributes": {
@@ -731,43 +956,151 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 243,
+                              "referencedDeclaration": 251,
                               "type": "string memory",
                               "value": "_name"
                             },
-                            "id": 255,
+                            "id": 267,
                             "name": "Identifier",
-                            "src": "252:5:4"
+                            "src": "271:5:4"
                           }
                         ],
-                        "id": 256,
+                        "id": 268,
                         "name": "Assignment",
-                        "src": "245:12:4"
+                        "src": "264:12:4"
                       }
                     ],
-                    "id": 257,
+                    "id": 269,
                     "name": "ExpressionStatement",
-                    "src": "245:12:4"
+                    "src": "264:12:4"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 328,
+                              "type": "uint256",
+                              "value": "rep"
+                            },
+                            "id": 270,
+                            "name": "Identifier",
+                            "src": "287:3:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 271,
+                            "name": "Literal",
+                            "src": "293:1:4"
+                          }
+                        ],
+                        "id": 272,
+                        "name": "Assignment",
+                        "src": "287:7:4"
+                      }
+                    ],
+                    "id": 273,
+                    "name": "ExpressionStatement",
+                    "src": "287:7:4"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 332,
+                              "type": "string storage ref",
+                              "value": "category"
+                            },
+                            "id": 274,
+                            "name": "Identifier",
+                            "src": "305:8:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"\"",
+                              "value": ""
+                            },
+                            "id": 275,
+                            "name": "Literal",
+                            "src": "316:2:4"
+                          }
+                        ],
+                        "id": 276,
+                        "name": "Assignment",
+                        "src": "305:13:4"
+                      }
+                    ],
+                    "id": 277,
+                    "name": "ExpressionStatement",
+                    "src": "305:13:4"
                   }
                 ],
-                "id": 258,
+                "id": 278,
                 "name": "Block",
-                "src": "192:73:4"
+                "src": "192:134:4"
               }
             ],
-            "id": 259,
+            "id": 279,
             "name": "FunctionDefinition",
-            "src": "144:121:4"
+            "src": "144:182:4"
           }
         ],
-        "id": 260,
+        "id": 280,
         "name": "ContractDefinition",
-        "src": "99:169:4"
+        "src": "99:230:4"
       }
     ],
-    "id": 261,
+    "id": 281,
     "name": "SourceUnit",
-    "src": "33:235:4"
+    "src": "33:296:4"
   },
   "compiler": {
     "name": "solc",
@@ -775,7 +1108,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-03T14:22:14.831Z",
+  "updatedAt": "2021-02-03T21:55:56.031Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

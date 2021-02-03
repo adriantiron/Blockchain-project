@@ -7,7 +7,7 @@ contract Evaluator is GenericUser{
     
     constructor (address _addr, string memory _name, string memory _category){
         addr = _addr;
-        role = 1;
+        role = uint(Roles.Evaluator);
         rep = 5;
         name = _name;
         category = _category;

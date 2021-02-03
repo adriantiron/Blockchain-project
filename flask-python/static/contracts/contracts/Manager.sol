@@ -7,7 +7,7 @@ contract Manager is GenericUser{
     
     constructor (address _addr, string memory _name){
         addr = _addr;
-        role = 0;
+        role = uint(Roles.Manager);
         rep = 5;
         name = _name;
     }

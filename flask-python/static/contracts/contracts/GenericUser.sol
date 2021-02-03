@@ -8,6 +8,8 @@ abstract contract GenericUser {
     string public name;
     string public category;
     
+    enum Roles{ Manager, Freelancer, Evaluator, Financer}
+    
     function rep_up() public {
         if (rep < 10)
             rep++;

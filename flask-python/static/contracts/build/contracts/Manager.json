@@ -97,27 +97,27 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"category\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_down\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_up\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"role\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol\":\"Manager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol\":{\"keccak256\":\"0xef79d47ff50559fd7848a8bb9b15b23b6033d6b2ddd40ce39d4e37a9ee04eb54\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://54026095148db76ea53d0a4a6569f3aeb406310a384421233250fe30c0d2f1e2\",\"dweb:/ipfs/QmXQ7ay6gJTy8MzZ7EE9NaTartcBaCrYx96ztPfoKBDVAU\"]},\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol\":{\"keccak256\":\"0x9e63d7dbac52b3929e06248cca955051334e42cb0952eedeea1da879fa67da7a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://faf2f20aabb83d774603c0b95b9e12660dff726bd8007099c7634eac08775f3a\",\"dweb:/ipfs/QmPAkdJheMmiQAJVBqmkZaB7FcgksPp3myE5XWaCoZsz9Y\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040516104913803806104918339818101604052604081101561003357600080fd5b81516020830180516040519294929383019291908464010000000082111561005a57600080fd5b90830190602082018581111561006f57600080fd5b825164010000000081118282018810171561008957600080fd5b82525081516020918201929091019080838360005b838110156100b657818101518382015260200161009e565b50505050905090810190601f1680156100e35780820380516001836020036101000a031916815260200191505b506040525050600080546001600160a01b0319166001600160a01b0385161781556001555060056002558051610120906003906020840190610128565b5050506101bb565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016957805160ff1916838001178555610196565b82800160010185558215610196579182015b8281111561019657825182559160200191906001019061017b565b506101a29291506101a6565b5090565b5b808211156101a257600081556001016101a7565b6102c7806101ca6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea2646970667358221220f667369e5327db11740d6e92a78a374541720131c6ee35e31ec415088bf042cb64736f6c63430007000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea2646970667358221220f667369e5327db11740d6e92a78a374541720131c6ee35e31ec415088bf042cb64736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"category\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_down\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rep_up\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"role\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol\":\"Manager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol\":{\"keccak256\":\"0x687336aeee9991dbbb6b28b287bbb3b47196ed3aa45a11b7d4aeefcf07328f57\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1db7e217d75b6b6445c3de958ba45a9bf46c34f40a202b4f385858d921202109\",\"dweb:/ipfs/QmVeLWTMq4kaoJx5L28BfDJxNeVB7C89wdHnEWvDbhiPM4\"]},\"/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol\":{\"keccak256\":\"0x714299ffa3c135df04a478602f1efe90aa5fb29e6340bd8744c9c2e91da7f621\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://914bd23aaf9bcf78d0fbcf9ed826374def8f2dfce4aee8c4f14b6f082e6b3cb9\",\"dweb:/ipfs/QmTxEekkh7TyPCbmTMu2BHRN1jKzxP9JWy23rpmm5Vmhqf\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516104923803806104928339818101604052604081101561003357600080fd5b81516020830180516040519294929383019291908464010000000082111561005a57600080fd5b90830190602082018581111561006f57600080fd5b825164010000000081118282018810171561008957600080fd5b82525081516020918201929091019080838360005b838110156100b657818101518382015260200161009e565b50505050905090810190601f1680156100e35780820380516001836020036101000a031916815260200191505b506040525050600080546001600160a01b0319166001600160a01b038516178155905060015560056002558051610121906003906020840190610129565b5050506101bc565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016a57805160ff1916838001178555610197565b82800160010185558215610197579182015b8281111561019757825182559160200191906001019061017c565b506101a39291506101a7565b5090565b5b808211156101a357600081556001016101a8565b6102c7806101cb6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea2646970667358221220e9354aa65a145b47fc56d1de96d0a5ac1038db097fa795b4f21aecf6e61eabf964736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c8063c016a0bf1161005b578063c016a0bf1461013d578063ccc0795914610147578063e300b2e61461014f578063ef430aa6146101575761007d565b806306fdde031461008257806310055c1d146100ff578063767800de14610119575b600080fd5b61008a61015f565b6040805160208082528351818301528351919283929083019185019080838360005b838110156100c45781810151838201526020016100ac565b50505050905090810190601f1680156100f15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101076101ed565b60408051918252519081900360200190f35b6101216101f3565b604080516001600160a01b039092168252519081900360200190f35b610145610202565b005b610107610219565b61014561021f565b61008a610236565b6003805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e5565b820191906000526020600020905b8154815290600101906020018083116101c857829003601f168201915b505050505081565b60015481565b6000546001600160a01b031681565b600a6002541015610217576002805460010190555b565b60025481565b600160025411156102175760028054600019019055565b6004805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101e55780601f106101ba576101008083540402835291602001916101e556fea2646970667358221220e9354aa65a145b47fc56d1de96d0a5ac1038db097fa795b4f21aecf6e61eabf964736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "99:186:7:-:0;;;143:139;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;143:139:7;;;;;;;;;;-1:-1:-1;143:139:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;143:139:7;;-1:-1:-1;;202:4:7;:12;;-1:-1:-1;;;;;;202:12:7;-1:-1:-1;;;;;202:12:7;;;;;-1:-1:-1;225:8:7;-1:-1:-1;250:1:7;244:3;:7;262:12;;;;:4;;:12;;;;;:::i;:::-;;143:139;;99:186;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;99:186:7;;;-1:-1:-1;99:186:7;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "99:186:7:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;176:18:6;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:16;;;:::i;:::-;;;;;;;;;;;;;;;;105:19;;;:::i;:::-;;;;-1:-1:-1;;;;;105:19:6;;;;;;;;;;;;;;236:76;;;:::i;:::-;;154:15;;;:::i;324:77::-;;;:::i;201:22::-;;;:::i;176:18::-;;;;;;;;;;;;;;;-1:-1:-1;;176:18:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;131:16::-;;;;:::o;105:19::-;;;-1:-1:-1;;;;;105:19:6;;:::o;236:76::-;282:2;276:3;;:8;272:32;;;299:3;:5;;;;;;272:32;236:76::o;154:15::-;;;;:::o;324:77::-;372:1;366:3;;:7;362:31;;;388:3;:5;;-1:-1:-1;;388:5:6;;;324:77::o;201:22::-;;;;;;;;;;;;;;;-1:-1:-1;;201:22:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.8.0;\r\n\r\nimport \"./GenericUser.sol\";\r\n\r\ncontract Manager is GenericUser{\r\n    \r\n    constructor (address _addr, string memory _name){\r\n        addr = _addr;\r\n        role = 0;\r\n        rep = 5;\r\n        name = _name;\r\n    }\r\n}",
+  "sourceMap": "99:204:7:-:0;;;143:157;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;143:157:7;;;;;;;;;;-1:-1:-1;143:157:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;143:157:7;;-1:-1:-1;;202:4:7;:12;;-1:-1:-1;;;;;;202:12:7;-1:-1:-1;;;;;202:12:7;;;;;-1:-1:-1;225:26:7;-1:-1:-1;268:1:7;262:3;:7;280:12;;;;:4;;:12;;;;;:::i;:::-;;143:157;;99:204;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;99:204:7;;;-1:-1:-1;99:204:7;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "99:204:7:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;176:18:6;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:16;;;:::i;:::-;;;;;;;;;;;;;;;;105:19;;;:::i;:::-;;;;-1:-1:-1;;;;;105:19:6;;;;;;;;;;;;;;301:76;;;:::i;:::-;;154:15;;;:::i;389:77::-;;;:::i;201:22::-;;;:::i;176:18::-;;;;;;;;;;;;;;;-1:-1:-1;;176:18:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;131:16::-;;;;:::o;105:19::-;;;-1:-1:-1;;;;;105:19:6;;:::o;301:76::-;347:2;341:3;;:8;337:32;;;364:3;:5;;;;;;337:32;301:76::o;154:15::-;;;;:::o;389:77::-;437:1;431:3;;:7;427:31;;;453:3;:5;;-1:-1:-1;;453:5:6;;;389:77::o;201:22::-;;;;;;;;;;;;;;;-1:-1:-1;;201:22:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.8.0;\r\n\r\nimport \"./GenericUser.sol\";\r\n\r\ncontract Manager is GenericUser{\r\n    \r\n    constructor (address _addr, string memory _name){\r\n        addr = _addr;\r\n        role = uint(Roles.Manager);\r\n        rep = 5;\r\n        name = _name;\r\n    }\r\n}",
   "sourcePath": "E:\\PROJECTS\\Blockchain-project\\flask-python\\static\\contracts\\contracts\\Manager.sol",
   "ast": {
     "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol",
     "exportedSymbols": {
       "Manager": [
-        361
+        394
       ]
     },
-    "id": 362,
+    "id": 395,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 333,
+        "id": 362,
         "literals": [
           "solidity",
           ">=",
@@ -133,10 +133,10 @@
       {
         "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol",
         "file": "./GenericUser.sol",
-        "id": 334,
+        "id": 363,
         "nodeType": "ImportDirective",
-        "scope": 362,
-        "sourceUnit": 332,
+        "scope": 395,
+        "sourceUnit": 361,
         "src": "68:27:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -148,56 +148,56 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 335,
+              "id": 364,
               "name": "GenericUser",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 331,
+              "referencedDeclaration": 360,
               "src": "119:11:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_GenericUser_$331",
+                "typeIdentifier": "t_contract$_GenericUser_$360",
                 "typeString": "contract GenericUser"
               }
             },
-            "id": 336,
+            "id": 365,
             "nodeType": "InheritanceSpecifier",
             "src": "119:11:7"
           }
         ],
         "contractDependencies": [
-          331
+          360
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 361,
+        "id": 394,
         "linearizedBaseContracts": [
-          361,
-          331
+          394,
+          360
         ],
         "name": "Manager",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 359,
+              "id": 392,
               "nodeType": "Block",
-              "src": "191:91:7",
+              "src": "191:109:7",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 345,
+                    "id": 374,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 343,
+                      "id": 372,
                       "name": "addr",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 300,
+                      "referencedDeclaration": 324,
                       "src": "202:4:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -208,11 +208,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 344,
+                      "id": 373,
                       "name": "_addr",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 338,
+                      "referencedDeclaration": 367,
                       "src": "209:5:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -225,25 +225,25 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 346,
+                  "id": 375,
                   "nodeType": "ExpressionStatement",
                   "src": "202:12:7"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 349,
+                    "id": 382,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 347,
+                      "id": 376,
                       "name": "role",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 302,
+                      "referencedDeclaration": 326,
                       "src": "225:4:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -254,48 +254,107 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "30",
-                      "id": 348,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 379,
+                            "name": "Roles",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 337,
+                            "src": "237:5:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_Roles_$337_$",
+                              "typeString": "type(enum GenericUser.Roles)"
+                            }
+                          },
+                          "id": 380,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "Manager",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "237:13:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Roles_$337",
+                            "typeString": "enum GenericUser.Roles"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_enum$_Roles_$337",
+                            "typeString": "enum GenericUser.Roles"
+                          }
+                        ],
+                        "id": 378,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "232:4:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        },
+                        "typeName": {
+                          "id": 377,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "232:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": null,
+                            "typeString": null
+                          }
+                        }
+                      },
+                      "id": 381,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
-                      "kind": "number",
+                      "kind": "typeConversion",
                       "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "232:1:7",
-                      "subdenomination": null,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "232:19:7",
+                      "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_0_by_1",
-                        "typeString": "int_const 0"
-                      },
-                      "value": "0"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "225:8:7",
+                    "src": "225:26:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 350,
+                  "id": 383,
                   "nodeType": "ExpressionStatement",
-                  "src": "225:8:7"
+                  "src": "225:26:7"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 353,
+                    "id": 386,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 351,
+                      "id": 384,
                       "name": "rep",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 304,
-                      "src": "244:3:7",
+                      "referencedDeclaration": 328,
+                      "src": "262:3:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -306,14 +365,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "35",
-                      "id": 352,
+                      "id": 385,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "250:1:7",
+                      "src": "268:1:7",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_5_by_1",
@@ -321,32 +380,32 @@
                       },
                       "value": "5"
                     },
-                    "src": "244:7:7",
+                    "src": "262:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 354,
+                  "id": 387,
                   "nodeType": "ExpressionStatement",
-                  "src": "244:7:7"
+                  "src": "262:7:7"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 357,
+                    "id": 390,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 355,
+                      "id": 388,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 306,
-                      "src": "262:4:7",
+                      "referencedDeclaration": 330,
+                      "src": "280:4:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -356,31 +415,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 356,
+                      "id": 389,
                       "name": "_name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 340,
-                      "src": "269:5:7",
+                      "referencedDeclaration": 369,
+                      "src": "287:5:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "262:12:7",
+                    "src": "280:12:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 358,
+                  "id": 391,
                   "nodeType": "ExpressionStatement",
-                  "src": "262:12:7"
+                  "src": "280:12:7"
                 }
               ]
             },
             "documentation": null,
-            "id": 360,
+            "id": 393,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -388,17 +447,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 341,
+              "id": 370,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 338,
+                  "id": 367,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 360,
+                  "scope": 393,
                   "src": "156:13:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -407,7 +466,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 337,
+                    "id": 366,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "156:7:7",
@@ -422,12 +481,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 340,
+                  "id": 369,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 360,
+                  "scope": 393,
                   "src": "171:19:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -436,7 +495,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 339,
+                    "id": 368,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "171:6:7",
@@ -452,30 +511,30 @@
               "src": "155:36:7"
             },
             "returnParameters": {
-              "id": 342,
+              "id": 371,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "191:0:7"
             },
-            "scope": 361,
-            "src": "143:139:7",
+            "scope": 394,
+            "src": "143:157:7",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 362,
-        "src": "99:186:7"
+        "scope": 395,
+        "src": "99:204:7"
       }
     ],
-    "src": "33:252:7"
+    "src": "33:270:7"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol",
       "exportedSymbols": {
         "Manager": [
-          361
+          394
         ]
       },
       "license": "MIT"
@@ -493,22 +552,22 @@
             ".0"
           ]
         },
-        "id": 333,
+        "id": 362,
         "name": "PragmaDirective",
         "src": "33:31:7"
       },
       {
         "attributes": {
-          "SourceUnit": 332,
+          "SourceUnit": 361,
           "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol",
           "file": "./GenericUser.sol",
-          "scope": 362,
+          "scope": 395,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 334,
+        "id": 363,
         "name": "ImportDirective",
         "src": "68:27:7"
       },
@@ -516,17 +575,17 @@
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            331
+            360
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            361,
-            331
+            394,
+            360
           ],
           "name": "Manager",
-          "scope": 362
+          "scope": 395
         },
         "children": [
           {
@@ -538,15 +597,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "GenericUser",
-                  "referencedDeclaration": 331,
+                  "referencedDeclaration": 360,
                   "type": "contract GenericUser"
                 },
-                "id": 335,
+                "id": 364,
                 "name": "UserDefinedTypeName",
                 "src": "119:11:7"
               }
             ],
-            "id": 336,
+            "id": 365,
             "name": "InheritanceSpecifier",
             "src": "119:11:7"
           },
@@ -561,7 +620,7 @@
               ],
               "name": "",
               "overrides": null,
-              "scope": 361,
+              "scope": 394,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "public"
@@ -575,7 +634,7 @@
                       "mutability": "mutable",
                       "name": "_addr",
                       "overrides": null,
-                      "scope": 360,
+                      "scope": 393,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -589,12 +648,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 337,
+                        "id": 366,
                         "name": "ElementaryTypeName",
                         "src": "156:7:7"
                       }
                     ],
-                    "id": 338,
+                    "id": 367,
                     "name": "VariableDeclaration",
                     "src": "156:13:7"
                   },
@@ -604,7 +663,7 @@
                       "mutability": "mutable",
                       "name": "_name",
                       "overrides": null,
-                      "scope": 360,
+                      "scope": 393,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -617,17 +676,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 339,
+                        "id": 368,
                         "name": "ElementaryTypeName",
                         "src": "171:6:7"
                       }
                     ],
-                    "id": 340,
+                    "id": 369,
                     "name": "VariableDeclaration",
                     "src": "171:19:7"
                   }
                 ],
-                "id": 341,
+                "id": 370,
                 "name": "ParameterList",
                 "src": "155:36:7"
               },
@@ -638,7 +697,7 @@
                   ]
                 },
                 "children": [],
-                "id": 342,
+                "id": 371,
                 "name": "ParameterList",
                 "src": "191:0:7"
               },
@@ -663,11 +722,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 300,
+                              "referencedDeclaration": 324,
                               "type": "address",
                               "value": "addr"
                             },
-                            "id": 343,
+                            "id": 372,
                             "name": "Identifier",
                             "src": "202:4:7"
                           },
@@ -677,21 +736,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 338,
+                              "referencedDeclaration": 367,
                               "type": "address",
                               "value": "_addr"
                             },
-                            "id": 344,
+                            "id": 373,
                             "name": "Identifier",
                             "src": "209:5:7"
                           }
                         ],
-                        "id": 345,
+                        "id": 374,
                         "name": "Assignment",
                         "src": "202:12:7"
                       }
                     ],
-                    "id": 346,
+                    "id": 375,
                     "name": "ExpressionStatement",
                     "src": "202:12:7"
                   },
@@ -714,40 +773,104 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 302,
+                              "referencedDeclaration": 326,
                               "type": "uint256",
                               "value": "role"
                             },
-                            "id": 347,
+                            "id": 376,
                             "name": "Identifier",
                             "src": "225:4:7"
                           },
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "hexvalue": "30",
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
+                              "isStructConstructorCall": false,
                               "lValueRequested": false,
-                              "subdenomination": null,
-                              "token": "number",
-                              "type": "int_const 0",
-                              "value": "0"
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": true
                             },
-                            "id": 348,
-                            "name": "Literal",
-                            "src": "232:1:7"
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_Roles_$337",
+                                      "typeString": "enum GenericUser.Roles"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "name": "uint",
+                                      "type": null
+                                    },
+                                    "id": 377,
+                                    "name": "ElementaryTypeName",
+                                    "src": "232:4:7"
+                                  }
+                                ],
+                                "id": 378,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "232:4:7"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Manager",
+                                  "referencedDeclaration": null,
+                                  "type": "enum GenericUser.Roles"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 337,
+                                      "type": "type(enum GenericUser.Roles)",
+                                      "value": "Roles"
+                                    },
+                                    "id": 379,
+                                    "name": "Identifier",
+                                    "src": "237:5:7"
+                                  }
+                                ],
+                                "id": 380,
+                                "name": "MemberAccess",
+                                "src": "237:13:7"
+                              }
+                            ],
+                            "id": 381,
+                            "name": "FunctionCall",
+                            "src": "232:19:7"
                           }
                         ],
-                        "id": 349,
+                        "id": 382,
                         "name": "Assignment",
-                        "src": "225:8:7"
+                        "src": "225:26:7"
                       }
                     ],
-                    "id": 350,
+                    "id": 383,
                     "name": "ExpressionStatement",
-                    "src": "225:8:7"
+                    "src": "225:26:7"
                   },
                   {
                     "children": [
@@ -768,13 +891,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 304,
+                              "referencedDeclaration": 328,
                               "type": "uint256",
                               "value": "rep"
                             },
-                            "id": 351,
+                            "id": 384,
                             "name": "Identifier",
-                            "src": "244:3:7"
+                            "src": "262:3:7"
                           },
                           {
                             "attributes": {
@@ -789,19 +912,19 @@
                               "type": "int_const 5",
                               "value": "5"
                             },
-                            "id": 352,
+                            "id": 385,
                             "name": "Literal",
-                            "src": "250:1:7"
+                            "src": "268:1:7"
                           }
                         ],
-                        "id": 353,
+                        "id": 386,
                         "name": "Assignment",
-                        "src": "244:7:7"
+                        "src": "262:7:7"
                       }
                     ],
-                    "id": 354,
+                    "id": 387,
                     "name": "ExpressionStatement",
-                    "src": "244:7:7"
+                    "src": "262:7:7"
                   },
                   {
                     "children": [
@@ -822,13 +945,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 306,
+                              "referencedDeclaration": 330,
                               "type": "string storage ref",
                               "value": "name"
                             },
-                            "id": 355,
+                            "id": 388,
                             "name": "Identifier",
-                            "src": "262:4:7"
+                            "src": "280:4:7"
                           },
                           {
                             "attributes": {
@@ -836,43 +959,43 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 340,
+                              "referencedDeclaration": 369,
                               "type": "string memory",
                               "value": "_name"
                             },
-                            "id": 356,
+                            "id": 389,
                             "name": "Identifier",
-                            "src": "269:5:7"
+                            "src": "287:5:7"
                           }
                         ],
-                        "id": 357,
+                        "id": 390,
                         "name": "Assignment",
-                        "src": "262:12:7"
+                        "src": "280:12:7"
                       }
                     ],
-                    "id": 358,
+                    "id": 391,
                     "name": "ExpressionStatement",
-                    "src": "262:12:7"
+                    "src": "280:12:7"
                   }
                 ],
-                "id": 359,
+                "id": 392,
                 "name": "Block",
-                "src": "191:91:7"
+                "src": "191:109:7"
               }
             ],
-            "id": 360,
+            "id": 393,
             "name": "FunctionDefinition",
-            "src": "143:139:7"
+            "src": "143:157:7"
           }
         ],
-        "id": 361,
+        "id": 394,
         "name": "ContractDefinition",
-        "src": "99:186:7"
+        "src": "99:204:7"
       }
     ],
-    "id": 362,
+    "id": 395,
     "name": "SourceUnit",
-    "src": "33:252:7"
+    "src": "33:270:7"
   },
   "compiler": {
     "name": "solc",
@@ -880,7 +1003,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-03T14:22:14.830Z",
+  "updatedAt": "2021-02-03T21:55:56.029Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
