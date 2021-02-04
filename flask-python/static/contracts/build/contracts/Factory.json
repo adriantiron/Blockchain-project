@@ -120,15 +120,15 @@
     "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Factory.sol",
     "exportedSymbols": {
       "Factory": [
-        242
+        335
       ]
     },
-    "id": 243,
+    "id": 336,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 151,
+        "id": 244,
         "literals": [
           "solidity",
           ">=",
@@ -144,10 +144,10 @@
       {
         "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol",
         "file": "./Manager.sol",
-        "id": 152,
+        "id": 245,
         "nodeType": "ImportDirective",
-        "scope": 243,
-        "sourceUnit": 395,
+        "scope": 336,
+        "sourceUnit": 488,
         "src": "68:23:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -155,10 +155,10 @@
       {
         "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Freelancer.sol",
         "file": "./Freelancer.sol",
-        "id": 153,
+        "id": 246,
         "nodeType": "ImportDirective",
-        "scope": 243,
-        "sourceUnit": 321,
+        "scope": 336,
+        "sourceUnit": 414,
         "src": "93:26:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -166,10 +166,10 @@
       {
         "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Evaluator.sol",
         "file": "./Evaluator.sol",
-        "id": 154,
+        "id": 247,
         "nodeType": "ImportDirective",
-        "scope": 243,
-        "sourceUnit": 150,
+        "scope": 336,
+        "sourceUnit": 243,
         "src": "121:25:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -177,10 +177,10 @@
       {
         "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol",
         "file": "./Financer.sol",
-        "id": 155,
+        "id": 248,
         "nodeType": "ImportDirective",
-        "scope": 243,
-        "sourceUnit": 281,
+        "scope": 336,
+        "sourceUnit": 374,
         "src": "148:24:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -189,56 +189,56 @@
         "abstract": false,
         "baseContracts": [],
         "contractDependencies": [
-          149,
-          280,
-          320,
-          394
+          242,
+          373,
+          413,
+          487
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 242,
+        "id": 335,
         "linearizedBaseContracts": [
-          242
+          335
         ],
         "name": "Factory",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 174,
+              "id": 267,
               "nodeType": "Block",
               "src": "294:87:3",
               "statements": [
                 {
                   "assignments": [
-                    165
+                    258
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 165,
+                      "id": 258,
                       "mutability": "mutable",
                       "name": "manager",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 174,
+                      "scope": 267,
                       "src": "305:15:3",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Manager_$394",
+                        "typeIdentifier": "t_contract$_Manager_$487",
                         "typeString": "contract Manager"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 164,
+                        "id": 257,
                         "name": "Manager",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 394,
+                        "referencedDeclaration": 487,
                         "src": "305:7:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Manager_$394",
+                          "typeIdentifier": "t_contract$_Manager_$487",
                           "typeString": "contract Manager"
                         }
                       },
@@ -246,17 +246,17 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 171,
+                  "id": 264,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 168,
+                        "id": 261,
                         "name": "_addr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 157,
+                        "referencedDeclaration": 250,
                         "src": "335:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -265,11 +265,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 169,
+                        "id": 262,
                         "name": "_name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 159,
+                        "referencedDeclaration": 252,
                         "src": "342:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -288,7 +288,7 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 167,
+                      "id": 260,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -296,23 +296,23 @@
                       "nodeType": "NewExpression",
                       "src": "323:11:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$returns$_t_contract$_Manager_$394_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$returns$_t_contract$_Manager_$487_$",
                         "typeString": "function (address,string memory) returns (contract Manager)"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 166,
+                        "id": 259,
                         "name": "Manager",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 394,
+                        "referencedDeclaration": 487,
                         "src": "327:7:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Manager_$394",
+                          "typeIdentifier": "t_contract$_Manager_$487",
                           "typeString": "contract Manager"
                         }
                       }
                     },
-                    "id": 170,
+                    "id": 263,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -323,7 +323,7 @@
                     "src": "323:25:3",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Manager_$394",
+                      "typeIdentifier": "t_contract$_Manager_$487",
                       "typeString": "contract Manager"
                     }
                   },
@@ -333,19 +333,19 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 172,
+                    "id": 265,
                     "name": "manager",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 165,
+                    "referencedDeclaration": 258,
                     "src": "366:7:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Manager_$394",
+                      "typeIdentifier": "t_contract$_Manager_$487",
                       "typeString": "contract Manager"
                     }
                   },
-                  "functionReturnParameters": 163,
-                  "id": 173,
+                  "functionReturnParameters": 256,
+                  "id": 266,
                   "nodeType": "Return",
                   "src": "359:14:3"
                 }
@@ -353,7 +353,7 @@
             },
             "documentation": null,
             "functionSelector": "9e3eb21d",
-            "id": 175,
+            "id": 268,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -361,17 +361,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 160,
+              "id": 253,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 157,
+                  "id": 250,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 175,
+                  "scope": 268,
                   "src": "233:13:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -380,7 +380,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 156,
+                    "id": 249,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "233:7:3",
@@ -395,12 +395,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 159,
+                  "id": 252,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 175,
+                  "scope": 268,
                   "src": "248:19:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -409,7 +409,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 158,
+                    "id": 251,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "248:6:3",
@@ -425,33 +425,33 @@
               "src": "232:36:3"
             },
             "returnParameters": {
-              "id": 163,
+              "id": 256,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 162,
+                  "id": 255,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 175,
+                  "scope": 268,
                   "src": "285:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Manager_$394",
+                    "typeIdentifier": "t_contract$_Manager_$487",
                     "typeString": "contract Manager"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 161,
+                    "id": 254,
                     "name": "Manager",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 394,
+                    "referencedDeclaration": 487,
                     "src": "285:7:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Manager_$394",
+                      "typeIdentifier": "t_contract$_Manager_$487",
                       "typeString": "contract Manager"
                     }
                   },
@@ -461,7 +461,7 @@
               ],
               "src": "284:9:3"
             },
-            "scope": 242,
+            "scope": 335,
             "src": "212:169:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -469,39 +469,39 @@
           },
           {
             "body": {
-              "id": 197,
+              "id": 290,
               "nodeType": "Block",
               "src": "506:110:3",
               "statements": [
                 {
                   "assignments": [
-                    187
+                    280
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 187,
+                      "id": 280,
                       "mutability": "mutable",
                       "name": "freelancer",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 197,
+                      "scope": 290,
                       "src": "517:21:3",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Freelancer_$320",
+                        "typeIdentifier": "t_contract$_Freelancer_$413",
                         "typeString": "contract Freelancer"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 186,
+                        "id": 279,
                         "name": "Freelancer",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 320,
+                        "referencedDeclaration": 413,
                         "src": "517:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Freelancer_$320",
+                          "typeIdentifier": "t_contract$_Freelancer_$413",
                           "typeString": "contract Freelancer"
                         }
                       },
@@ -509,17 +509,17 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 194,
+                  "id": 287,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 190,
+                        "id": 283,
                         "name": "_addr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 177,
+                        "referencedDeclaration": 270,
                         "src": "556:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -528,11 +528,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 191,
+                        "id": 284,
                         "name": "_name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 179,
+                        "referencedDeclaration": 272,
                         "src": "563:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -541,11 +541,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 192,
+                        "id": 285,
                         "name": "_category",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 181,
+                        "referencedDeclaration": 274,
                         "src": "570:9:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -568,7 +568,7 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 189,
+                      "id": 282,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -576,23 +576,23 @@
                       "nodeType": "NewExpression",
                       "src": "541:14:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_contract$_Freelancer_$320_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_contract$_Freelancer_$413_$",
                         "typeString": "function (address,string memory,string memory) returns (contract Freelancer)"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 188,
+                        "id": 281,
                         "name": "Freelancer",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 320,
+                        "referencedDeclaration": 413,
                         "src": "545:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Freelancer_$320",
+                          "typeIdentifier": "t_contract$_Freelancer_$413",
                           "typeString": "contract Freelancer"
                         }
                       }
                     },
-                    "id": 193,
+                    "id": 286,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -603,7 +603,7 @@
                     "src": "541:39:3",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Freelancer_$320",
+                      "typeIdentifier": "t_contract$_Freelancer_$413",
                       "typeString": "contract Freelancer"
                     }
                   },
@@ -613,19 +613,19 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 195,
+                    "id": 288,
                     "name": "freelancer",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 187,
+                    "referencedDeclaration": 280,
                     "src": "598:10:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Freelancer_$320",
+                      "typeIdentifier": "t_contract$_Freelancer_$413",
                       "typeString": "contract Freelancer"
                     }
                   },
-                  "functionReturnParameters": 185,
-                  "id": 196,
+                  "functionReturnParameters": 278,
+                  "id": 289,
                   "nodeType": "Return",
                   "src": "591:17:3"
                 }
@@ -633,7 +633,7 @@
             },
             "documentation": null,
             "functionSelector": "cefa61ca",
-            "id": 198,
+            "id": 291,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -641,17 +641,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 182,
+              "id": 275,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 177,
+                  "id": 270,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 198,
+                  "scope": 291,
                   "src": "417:13:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -660,7 +660,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 176,
+                    "id": 269,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "417:7:3",
@@ -675,12 +675,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 179,
+                  "id": 272,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 198,
+                  "scope": 291,
                   "src": "432:19:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -689,7 +689,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 178,
+                    "id": 271,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "432:6:3",
@@ -703,12 +703,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 181,
+                  "id": 274,
                   "mutability": "mutable",
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 198,
+                  "scope": 291,
                   "src": "453:23:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -717,7 +717,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 180,
+                    "id": 273,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "453:6:3",
@@ -733,33 +733,33 @@
               "src": "416:61:3"
             },
             "returnParameters": {
-              "id": 185,
+              "id": 278,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 184,
+                  "id": 277,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 198,
+                  "scope": 291,
                   "src": "494:10:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Freelancer_$320",
+                    "typeIdentifier": "t_contract$_Freelancer_$413",
                     "typeString": "contract Freelancer"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 183,
+                    "id": 276,
                     "name": "Freelancer",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 320,
+                    "referencedDeclaration": 413,
                     "src": "494:10:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Freelancer_$320",
+                      "typeIdentifier": "t_contract$_Freelancer_$413",
                       "typeString": "contract Freelancer"
                     }
                   },
@@ -769,7 +769,7 @@
               ],
               "src": "493:12:3"
             },
-            "scope": 242,
+            "scope": 335,
             "src": "393:223:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -777,39 +777,39 @@
           },
           {
             "body": {
-              "id": 220,
+              "id": 313,
               "nodeType": "Block",
               "src": "739:106:3",
               "statements": [
                 {
                   "assignments": [
-                    210
+                    303
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 210,
+                      "id": 303,
                       "mutability": "mutable",
                       "name": "evaluator",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 220,
+                      "scope": 313,
                       "src": "750:19:3",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Evaluator_$149",
+                        "typeIdentifier": "t_contract$_Evaluator_$242",
                         "typeString": "contract Evaluator"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 209,
+                        "id": 302,
                         "name": "Evaluator",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 149,
+                        "referencedDeclaration": 242,
                         "src": "750:9:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Evaluator_$149",
+                          "typeIdentifier": "t_contract$_Evaluator_$242",
                           "typeString": "contract Evaluator"
                         }
                       },
@@ -817,17 +817,17 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 217,
+                  "id": 310,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 213,
+                        "id": 306,
                         "name": "_addr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 200,
+                        "referencedDeclaration": 293,
                         "src": "786:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -836,11 +836,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 214,
+                        "id": 307,
                         "name": "_name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 202,
+                        "referencedDeclaration": 295,
                         "src": "793:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -849,11 +849,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 215,
+                        "id": 308,
                         "name": "_category",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 204,
+                        "referencedDeclaration": 297,
                         "src": "800:9:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -876,7 +876,7 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 212,
+                      "id": 305,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -884,23 +884,23 @@
                       "nodeType": "NewExpression",
                       "src": "772:13:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_contract$_Evaluator_$149_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_contract$_Evaluator_$242_$",
                         "typeString": "function (address,string memory,string memory) returns (contract Evaluator)"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 211,
+                        "id": 304,
                         "name": "Evaluator",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 149,
+                        "referencedDeclaration": 242,
                         "src": "776:9:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Evaluator_$149",
+                          "typeIdentifier": "t_contract$_Evaluator_$242",
                           "typeString": "contract Evaluator"
                         }
                       }
                     },
-                    "id": 216,
+                    "id": 309,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -911,7 +911,7 @@
                     "src": "772:38:3",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Evaluator_$149",
+                      "typeIdentifier": "t_contract$_Evaluator_$242",
                       "typeString": "contract Evaluator"
                     }
                   },
@@ -921,19 +921,19 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 218,
+                    "id": 311,
                     "name": "evaluator",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 210,
+                    "referencedDeclaration": 303,
                     "src": "828:9:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Evaluator_$149",
+                      "typeIdentifier": "t_contract$_Evaluator_$242",
                       "typeString": "contract Evaluator"
                     }
                   },
-                  "functionReturnParameters": 208,
-                  "id": 219,
+                  "functionReturnParameters": 301,
+                  "id": 312,
                   "nodeType": "Return",
                   "src": "821:16:3"
                 }
@@ -941,7 +941,7 @@
             },
             "documentation": null,
             "functionSelector": "3c517706",
-            "id": 221,
+            "id": 314,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -949,17 +949,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 205,
+              "id": 298,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 200,
+                  "id": 293,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 221,
+                  "scope": 314,
                   "src": "651:13:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -968,7 +968,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 199,
+                    "id": 292,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "651:7:3",
@@ -983,12 +983,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 202,
+                  "id": 295,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 221,
+                  "scope": 314,
                   "src": "666:19:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -997,7 +997,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 201,
+                    "id": 294,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "666:6:3",
@@ -1011,12 +1011,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 204,
+                  "id": 297,
                   "mutability": "mutable",
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 221,
+                  "scope": 314,
                   "src": "687:23:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1025,7 +1025,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 203,
+                    "id": 296,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "687:6:3",
@@ -1041,33 +1041,33 @@
               "src": "650:61:3"
             },
             "returnParameters": {
-              "id": 208,
+              "id": 301,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 207,
+                  "id": 300,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 221,
+                  "scope": 314,
                   "src": "728:9:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Evaluator_$149",
+                    "typeIdentifier": "t_contract$_Evaluator_$242",
                     "typeString": "contract Evaluator"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 206,
+                    "id": 299,
                     "name": "Evaluator",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 149,
+                    "referencedDeclaration": 242,
                     "src": "728:9:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Evaluator_$149",
+                      "typeIdentifier": "t_contract$_Evaluator_$242",
                       "typeString": "contract Evaluator"
                     }
                   },
@@ -1077,7 +1077,7 @@
               ],
               "src": "727:11:3"
             },
-            "scope": 242,
+            "scope": 335,
             "src": "628:217:3",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1085,39 +1085,39 @@
           },
           {
             "body": {
-              "id": 240,
+              "id": 333,
               "nodeType": "Block",
               "src": "941:91:3",
               "statements": [
                 {
                   "assignments": [
-                    231
+                    324
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 231,
+                      "id": 324,
                       "mutability": "mutable",
                       "name": "financer",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 240,
+                      "scope": 333,
                       "src": "952:17:3",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Financer_$280",
+                        "typeIdentifier": "t_contract$_Financer_$373",
                         "typeString": "contract Financer"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 230,
+                        "id": 323,
                         "name": "Financer",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 280,
+                        "referencedDeclaration": 373,
                         "src": "952:8:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Financer_$280",
+                          "typeIdentifier": "t_contract$_Financer_$373",
                           "typeString": "contract Financer"
                         }
                       },
@@ -1125,17 +1125,17 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 237,
+                  "id": 330,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 234,
+                        "id": 327,
                         "name": "_addr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 223,
+                        "referencedDeclaration": 316,
                         "src": "985:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1144,11 +1144,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 235,
+                        "id": 328,
                         "name": "_name",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 225,
+                        "referencedDeclaration": 318,
                         "src": "992:5:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1167,7 +1167,7 @@
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 233,
+                      "id": 326,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1175,23 +1175,23 @@
                       "nodeType": "NewExpression",
                       "src": "972:12:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$returns$_t_contract$_Financer_$280_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_string_memory_ptr_$returns$_t_contract$_Financer_$373_$",
                         "typeString": "function (address,string memory) returns (contract Financer)"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 232,
+                        "id": 325,
                         "name": "Financer",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 280,
+                        "referencedDeclaration": 373,
                         "src": "976:8:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Financer_$280",
+                          "typeIdentifier": "t_contract$_Financer_$373",
                           "typeString": "contract Financer"
                         }
                       }
                     },
-                    "id": 236,
+                    "id": 329,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1202,7 +1202,7 @@
                     "src": "972:26:3",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Financer_$280",
+                      "typeIdentifier": "t_contract$_Financer_$373",
                       "typeString": "contract Financer"
                     }
                   },
@@ -1212,19 +1212,19 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 238,
+                    "id": 331,
                     "name": "financer",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 231,
+                    "referencedDeclaration": 324,
                     "src": "1016:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Financer_$280",
+                      "typeIdentifier": "t_contract$_Financer_$373",
                       "typeString": "contract Financer"
                     }
                   },
-                  "functionReturnParameters": 229,
-                  "id": 239,
+                  "functionReturnParameters": 322,
+                  "id": 332,
                   "nodeType": "Return",
                   "src": "1009:15:3"
                 }
@@ -1232,7 +1232,7 @@
             },
             "documentation": null,
             "functionSelector": "aa24d732",
-            "id": 241,
+            "id": 334,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1240,17 +1240,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 226,
+              "id": 319,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 223,
+                  "id": 316,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 241,
+                  "scope": 334,
                   "src": "879:13:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1259,7 +1259,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 222,
+                    "id": 315,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "879:7:3",
@@ -1274,12 +1274,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 225,
+                  "id": 318,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 241,
+                  "scope": 334,
                   "src": "894:19:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1288,7 +1288,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 224,
+                    "id": 317,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "894:6:3",
@@ -1304,33 +1304,33 @@
               "src": "878:36:3"
             },
             "returnParameters": {
-              "id": 229,
+              "id": 322,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 228,
+                  "id": 321,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 241,
+                  "scope": 334,
                   "src": "931:8:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Financer_$280",
+                    "typeIdentifier": "t_contract$_Financer_$373",
                     "typeString": "contract Financer"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 227,
+                    "id": 320,
                     "name": "Financer",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 280,
+                    "referencedDeclaration": 373,
                     "src": "931:8:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Financer_$280",
+                      "typeIdentifier": "t_contract$_Financer_$373",
                       "typeString": "contract Financer"
                     }
                   },
@@ -1340,14 +1340,14 @@
               ],
               "src": "930:10:3"
             },
-            "scope": 242,
+            "scope": 335,
             "src": "857:175:3",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 243,
+        "scope": 336,
         "src": "176:865:3"
       }
     ],
@@ -1358,7 +1358,7 @@
       "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Factory.sol",
       "exportedSymbols": {
         "Factory": [
-          242
+          335
         ]
       },
       "license": "MIT"
@@ -1376,67 +1376,67 @@
             ".0"
           ]
         },
-        "id": 151,
+        "id": 244,
         "name": "PragmaDirective",
         "src": "33:31:3"
       },
       {
         "attributes": {
-          "SourceUnit": 395,
+          "SourceUnit": 488,
           "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Manager.sol",
           "file": "./Manager.sol",
-          "scope": 243,
+          "scope": 336,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 152,
+        "id": 245,
         "name": "ImportDirective",
         "src": "68:23:3"
       },
       {
         "attributes": {
-          "SourceUnit": 321,
+          "SourceUnit": 414,
           "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Freelancer.sol",
           "file": "./Freelancer.sol",
-          "scope": 243,
+          "scope": 336,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 153,
+        "id": 246,
         "name": "ImportDirective",
         "src": "93:26:3"
       },
       {
         "attributes": {
-          "SourceUnit": 150,
+          "SourceUnit": 243,
           "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Evaluator.sol",
           "file": "./Evaluator.sol",
-          "scope": 243,
+          "scope": 336,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 154,
+        "id": 247,
         "name": "ImportDirective",
         "src": "121:25:3"
       },
       {
         "attributes": {
-          "SourceUnit": 281,
+          "SourceUnit": 374,
           "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Financer.sol",
           "file": "./Financer.sol",
-          "scope": 243,
+          "scope": 336,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 155,
+        "id": 248,
         "name": "ImportDirective",
         "src": "148:24:3"
       },
@@ -1447,19 +1447,19 @@
             null
           ],
           "contractDependencies": [
-            149,
-            280,
-            320,
-            394
+            242,
+            373,
+            413,
+            487
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            242
+            335
           ],
           "name": "Factory",
-          "scope": 243
+          "scope": 336
         },
         "children": [
           {
@@ -1474,7 +1474,7 @@
               ],
               "name": "new_manager",
               "overrides": null,
-              "scope": 242,
+              "scope": 335,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "public"
@@ -1488,7 +1488,7 @@
                       "mutability": "mutable",
                       "name": "_addr",
                       "overrides": null,
-                      "scope": 175,
+                      "scope": 268,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1502,12 +1502,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 156,
+                        "id": 249,
                         "name": "ElementaryTypeName",
                         "src": "233:7:3"
                       }
                     ],
-                    "id": 157,
+                    "id": 250,
                     "name": "VariableDeclaration",
                     "src": "233:13:3"
                   },
@@ -1517,7 +1517,7 @@
                       "mutability": "mutable",
                       "name": "_name",
                       "overrides": null,
-                      "scope": 175,
+                      "scope": 268,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -1530,17 +1530,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 158,
+                        "id": 251,
                         "name": "ElementaryTypeName",
                         "src": "248:6:3"
                       }
                     ],
-                    "id": 159,
+                    "id": 252,
                     "name": "VariableDeclaration",
                     "src": "248:19:3"
                   }
                 ],
-                "id": 160,
+                "id": 253,
                 "name": "ParameterList",
                 "src": "232:36:3"
               },
@@ -1552,7 +1552,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 175,
+                      "scope": 268,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract Manager",
@@ -1564,20 +1564,20 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Manager",
-                          "referencedDeclaration": 394,
+                          "referencedDeclaration": 487,
                           "type": "contract Manager"
                         },
-                        "id": 161,
+                        "id": 254,
                         "name": "UserDefinedTypeName",
                         "src": "285:7:3"
                       }
                     ],
-                    "id": 162,
+                    "id": 255,
                     "name": "VariableDeclaration",
                     "src": "285:7:3"
                   }
                 ],
-                "id": 163,
+                "id": 256,
                 "name": "ParameterList",
                 "src": "284:9:3"
               },
@@ -1586,7 +1586,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        165
+                        258
                       ]
                     },
                     "children": [
@@ -1596,7 +1596,7 @@
                           "mutability": "mutable",
                           "name": "manager",
                           "overrides": null,
-                          "scope": 174,
+                          "scope": 267,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "contract Manager",
@@ -1608,15 +1608,15 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Manager",
-                              "referencedDeclaration": 394,
+                              "referencedDeclaration": 487,
                               "type": "contract Manager"
                             },
-                            "id": 164,
+                            "id": 257,
                             "name": "UserDefinedTypeName",
                             "src": "305:7:3"
                           }
                         ],
-                        "id": 165,
+                        "id": 258,
                         "name": "VariableDeclaration",
                         "src": "305:15:3"
                       },
@@ -1659,15 +1659,15 @@
                                 "attributes": {
                                   "contractScope": null,
                                   "name": "Manager",
-                                  "referencedDeclaration": 394,
+                                  "referencedDeclaration": 487,
                                   "type": "contract Manager"
                                 },
-                                "id": 166,
+                                "id": 259,
                                 "name": "UserDefinedTypeName",
                                 "src": "327:7:3"
                               }
                             ],
-                            "id": 167,
+                            "id": 260,
                             "name": "NewExpression",
                             "src": "323:11:3"
                           },
@@ -1677,11 +1677,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 157,
+                              "referencedDeclaration": 250,
                               "type": "address",
                               "value": "_addr"
                             },
-                            "id": 168,
+                            "id": 261,
                             "name": "Identifier",
                             "src": "335:5:3"
                           },
@@ -1691,27 +1691,27 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 159,
+                              "referencedDeclaration": 252,
                               "type": "string memory",
                               "value": "_name"
                             },
-                            "id": 169,
+                            "id": 262,
                             "name": "Identifier",
                             "src": "342:5:3"
                           }
                         ],
-                        "id": 170,
+                        "id": 263,
                         "name": "FunctionCall",
                         "src": "323:25:3"
                       }
                     ],
-                    "id": 171,
+                    "id": 264,
                     "name": "VariableDeclarationStatement",
                     "src": "305:43:3"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 163
+                      "functionReturnParameters": 256
                     },
                     "children": [
                       {
@@ -1720,26 +1720,26 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 165,
+                          "referencedDeclaration": 258,
                           "type": "contract Manager",
                           "value": "manager"
                         },
-                        "id": 172,
+                        "id": 265,
                         "name": "Identifier",
                         "src": "366:7:3"
                       }
                     ],
-                    "id": 173,
+                    "id": 266,
                     "name": "Return",
                     "src": "359:14:3"
                   }
                 ],
-                "id": 174,
+                "id": 267,
                 "name": "Block",
                 "src": "294:87:3"
               }
             ],
-            "id": 175,
+            "id": 268,
             "name": "FunctionDefinition",
             "src": "212:169:3"
           },
@@ -1755,7 +1755,7 @@
               ],
               "name": "new_freelancer",
               "overrides": null,
-              "scope": 242,
+              "scope": 335,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "public"
@@ -1769,7 +1769,7 @@
                       "mutability": "mutable",
                       "name": "_addr",
                       "overrides": null,
-                      "scope": 198,
+                      "scope": 291,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -1783,12 +1783,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 176,
+                        "id": 269,
                         "name": "ElementaryTypeName",
                         "src": "417:7:3"
                       }
                     ],
-                    "id": 177,
+                    "id": 270,
                     "name": "VariableDeclaration",
                     "src": "417:13:3"
                   },
@@ -1798,7 +1798,7 @@
                       "mutability": "mutable",
                       "name": "_name",
                       "overrides": null,
-                      "scope": 198,
+                      "scope": 291,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -1811,12 +1811,12 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 178,
+                        "id": 271,
                         "name": "ElementaryTypeName",
                         "src": "432:6:3"
                       }
                     ],
-                    "id": 179,
+                    "id": 272,
                     "name": "VariableDeclaration",
                     "src": "432:19:3"
                   },
@@ -1826,7 +1826,7 @@
                       "mutability": "mutable",
                       "name": "_category",
                       "overrides": null,
-                      "scope": 198,
+                      "scope": 291,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -1839,17 +1839,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 180,
+                        "id": 273,
                         "name": "ElementaryTypeName",
                         "src": "453:6:3"
                       }
                     ],
-                    "id": 181,
+                    "id": 274,
                     "name": "VariableDeclaration",
                     "src": "453:23:3"
                   }
                 ],
-                "id": 182,
+                "id": 275,
                 "name": "ParameterList",
                 "src": "416:61:3"
               },
@@ -1861,7 +1861,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 198,
+                      "scope": 291,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract Freelancer",
@@ -1873,20 +1873,20 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Freelancer",
-                          "referencedDeclaration": 320,
+                          "referencedDeclaration": 413,
                           "type": "contract Freelancer"
                         },
-                        "id": 183,
+                        "id": 276,
                         "name": "UserDefinedTypeName",
                         "src": "494:10:3"
                       }
                     ],
-                    "id": 184,
+                    "id": 277,
                     "name": "VariableDeclaration",
                     "src": "494:10:3"
                   }
                 ],
-                "id": 185,
+                "id": 278,
                 "name": "ParameterList",
                 "src": "493:12:3"
               },
@@ -1895,7 +1895,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        187
+                        280
                       ]
                     },
                     "children": [
@@ -1905,7 +1905,7 @@
                           "mutability": "mutable",
                           "name": "freelancer",
                           "overrides": null,
-                          "scope": 197,
+                          "scope": 290,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "contract Freelancer",
@@ -1917,15 +1917,15 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Freelancer",
-                              "referencedDeclaration": 320,
+                              "referencedDeclaration": 413,
                               "type": "contract Freelancer"
                             },
-                            "id": 186,
+                            "id": 279,
                             "name": "UserDefinedTypeName",
                             "src": "517:10:3"
                           }
                         ],
-                        "id": 187,
+                        "id": 280,
                         "name": "VariableDeclaration",
                         "src": "517:21:3"
                       },
@@ -1972,15 +1972,15 @@
                                 "attributes": {
                                   "contractScope": null,
                                   "name": "Freelancer",
-                                  "referencedDeclaration": 320,
+                                  "referencedDeclaration": 413,
                                   "type": "contract Freelancer"
                                 },
-                                "id": 188,
+                                "id": 281,
                                 "name": "UserDefinedTypeName",
                                 "src": "545:10:3"
                               }
                             ],
-                            "id": 189,
+                            "id": 282,
                             "name": "NewExpression",
                             "src": "541:14:3"
                           },
@@ -1990,11 +1990,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 177,
+                              "referencedDeclaration": 270,
                               "type": "address",
                               "value": "_addr"
                             },
-                            "id": 190,
+                            "id": 283,
                             "name": "Identifier",
                             "src": "556:5:3"
                           },
@@ -2004,11 +2004,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 179,
+                              "referencedDeclaration": 272,
                               "type": "string memory",
                               "value": "_name"
                             },
-                            "id": 191,
+                            "id": 284,
                             "name": "Identifier",
                             "src": "563:5:3"
                           },
@@ -2018,27 +2018,27 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 181,
+                              "referencedDeclaration": 274,
                               "type": "string memory",
                               "value": "_category"
                             },
-                            "id": 192,
+                            "id": 285,
                             "name": "Identifier",
                             "src": "570:9:3"
                           }
                         ],
-                        "id": 193,
+                        "id": 286,
                         "name": "FunctionCall",
                         "src": "541:39:3"
                       }
                     ],
-                    "id": 194,
+                    "id": 287,
                     "name": "VariableDeclarationStatement",
                     "src": "517:63:3"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 185
+                      "functionReturnParameters": 278
                     },
                     "children": [
                       {
@@ -2047,26 +2047,26 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 187,
+                          "referencedDeclaration": 280,
                           "type": "contract Freelancer",
                           "value": "freelancer"
                         },
-                        "id": 195,
+                        "id": 288,
                         "name": "Identifier",
                         "src": "598:10:3"
                       }
                     ],
-                    "id": 196,
+                    "id": 289,
                     "name": "Return",
                     "src": "591:17:3"
                   }
                 ],
-                "id": 197,
+                "id": 290,
                 "name": "Block",
                 "src": "506:110:3"
               }
             ],
-            "id": 198,
+            "id": 291,
             "name": "FunctionDefinition",
             "src": "393:223:3"
           },
@@ -2082,7 +2082,7 @@
               ],
               "name": "new_evaluator",
               "overrides": null,
-              "scope": 242,
+              "scope": 335,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "public"
@@ -2096,7 +2096,7 @@
                       "mutability": "mutable",
                       "name": "_addr",
                       "overrides": null,
-                      "scope": 221,
+                      "scope": 314,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2110,12 +2110,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 199,
+                        "id": 292,
                         "name": "ElementaryTypeName",
                         "src": "651:7:3"
                       }
                     ],
-                    "id": 200,
+                    "id": 293,
                     "name": "VariableDeclaration",
                     "src": "651:13:3"
                   },
@@ -2125,7 +2125,7 @@
                       "mutability": "mutable",
                       "name": "_name",
                       "overrides": null,
-                      "scope": 221,
+                      "scope": 314,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -2138,12 +2138,12 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 201,
+                        "id": 294,
                         "name": "ElementaryTypeName",
                         "src": "666:6:3"
                       }
                     ],
-                    "id": 202,
+                    "id": 295,
                     "name": "VariableDeclaration",
                     "src": "666:19:3"
                   },
@@ -2153,7 +2153,7 @@
                       "mutability": "mutable",
                       "name": "_category",
                       "overrides": null,
-                      "scope": 221,
+                      "scope": 314,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -2166,17 +2166,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 203,
+                        "id": 296,
                         "name": "ElementaryTypeName",
                         "src": "687:6:3"
                       }
                     ],
-                    "id": 204,
+                    "id": 297,
                     "name": "VariableDeclaration",
                     "src": "687:23:3"
                   }
                 ],
-                "id": 205,
+                "id": 298,
                 "name": "ParameterList",
                 "src": "650:61:3"
               },
@@ -2188,7 +2188,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 221,
+                      "scope": 314,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract Evaluator",
@@ -2200,20 +2200,20 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Evaluator",
-                          "referencedDeclaration": 149,
+                          "referencedDeclaration": 242,
                           "type": "contract Evaluator"
                         },
-                        "id": 206,
+                        "id": 299,
                         "name": "UserDefinedTypeName",
                         "src": "728:9:3"
                       }
                     ],
-                    "id": 207,
+                    "id": 300,
                     "name": "VariableDeclaration",
                     "src": "728:9:3"
                   }
                 ],
-                "id": 208,
+                "id": 301,
                 "name": "ParameterList",
                 "src": "727:11:3"
               },
@@ -2222,7 +2222,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        210
+                        303
                       ]
                     },
                     "children": [
@@ -2232,7 +2232,7 @@
                           "mutability": "mutable",
                           "name": "evaluator",
                           "overrides": null,
-                          "scope": 220,
+                          "scope": 313,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "contract Evaluator",
@@ -2244,15 +2244,15 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Evaluator",
-                              "referencedDeclaration": 149,
+                              "referencedDeclaration": 242,
                               "type": "contract Evaluator"
                             },
-                            "id": 209,
+                            "id": 302,
                             "name": "UserDefinedTypeName",
                             "src": "750:9:3"
                           }
                         ],
-                        "id": 210,
+                        "id": 303,
                         "name": "VariableDeclaration",
                         "src": "750:19:3"
                       },
@@ -2299,15 +2299,15 @@
                                 "attributes": {
                                   "contractScope": null,
                                   "name": "Evaluator",
-                                  "referencedDeclaration": 149,
+                                  "referencedDeclaration": 242,
                                   "type": "contract Evaluator"
                                 },
-                                "id": 211,
+                                "id": 304,
                                 "name": "UserDefinedTypeName",
                                 "src": "776:9:3"
                               }
                             ],
-                            "id": 212,
+                            "id": 305,
                             "name": "NewExpression",
                             "src": "772:13:3"
                           },
@@ -2317,11 +2317,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 200,
+                              "referencedDeclaration": 293,
                               "type": "address",
                               "value": "_addr"
                             },
-                            "id": 213,
+                            "id": 306,
                             "name": "Identifier",
                             "src": "786:5:3"
                           },
@@ -2331,11 +2331,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 202,
+                              "referencedDeclaration": 295,
                               "type": "string memory",
                               "value": "_name"
                             },
-                            "id": 214,
+                            "id": 307,
                             "name": "Identifier",
                             "src": "793:5:3"
                           },
@@ -2345,27 +2345,27 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 204,
+                              "referencedDeclaration": 297,
                               "type": "string memory",
                               "value": "_category"
                             },
-                            "id": 215,
+                            "id": 308,
                             "name": "Identifier",
                             "src": "800:9:3"
                           }
                         ],
-                        "id": 216,
+                        "id": 309,
                         "name": "FunctionCall",
                         "src": "772:38:3"
                       }
                     ],
-                    "id": 217,
+                    "id": 310,
                     "name": "VariableDeclarationStatement",
                     "src": "750:60:3"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 208
+                      "functionReturnParameters": 301
                     },
                     "children": [
                       {
@@ -2374,26 +2374,26 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 210,
+                          "referencedDeclaration": 303,
                           "type": "contract Evaluator",
                           "value": "evaluator"
                         },
-                        "id": 218,
+                        "id": 311,
                         "name": "Identifier",
                         "src": "828:9:3"
                       }
                     ],
-                    "id": 219,
+                    "id": 312,
                     "name": "Return",
                     "src": "821:16:3"
                   }
                 ],
-                "id": 220,
+                "id": 313,
                 "name": "Block",
                 "src": "739:106:3"
               }
             ],
-            "id": 221,
+            "id": 314,
             "name": "FunctionDefinition",
             "src": "628:217:3"
           },
@@ -2409,7 +2409,7 @@
               ],
               "name": "new_financer",
               "overrides": null,
-              "scope": 242,
+              "scope": 335,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "public"
@@ -2423,7 +2423,7 @@
                       "mutability": "mutable",
                       "name": "_addr",
                       "overrides": null,
-                      "scope": 241,
+                      "scope": 334,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2437,12 +2437,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 222,
+                        "id": 315,
                         "name": "ElementaryTypeName",
                         "src": "879:7:3"
                       }
                     ],
-                    "id": 223,
+                    "id": 316,
                     "name": "VariableDeclaration",
                     "src": "879:13:3"
                   },
@@ -2452,7 +2452,7 @@
                       "mutability": "mutable",
                       "name": "_name",
                       "overrides": null,
-                      "scope": 241,
+                      "scope": 334,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -2465,17 +2465,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 224,
+                        "id": 317,
                         "name": "ElementaryTypeName",
                         "src": "894:6:3"
                       }
                     ],
-                    "id": 225,
+                    "id": 318,
                     "name": "VariableDeclaration",
                     "src": "894:19:3"
                   }
                 ],
-                "id": 226,
+                "id": 319,
                 "name": "ParameterList",
                 "src": "878:36:3"
               },
@@ -2487,7 +2487,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 241,
+                      "scope": 334,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "contract Financer",
@@ -2499,20 +2499,20 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Financer",
-                          "referencedDeclaration": 280,
+                          "referencedDeclaration": 373,
                           "type": "contract Financer"
                         },
-                        "id": 227,
+                        "id": 320,
                         "name": "UserDefinedTypeName",
                         "src": "931:8:3"
                       }
                     ],
-                    "id": 228,
+                    "id": 321,
                     "name": "VariableDeclaration",
                     "src": "931:8:3"
                   }
                 ],
-                "id": 229,
+                "id": 322,
                 "name": "ParameterList",
                 "src": "930:10:3"
               },
@@ -2521,7 +2521,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        231
+                        324
                       ]
                     },
                     "children": [
@@ -2531,7 +2531,7 @@
                           "mutability": "mutable",
                           "name": "financer",
                           "overrides": null,
-                          "scope": 240,
+                          "scope": 333,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "contract Financer",
@@ -2543,15 +2543,15 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Financer",
-                              "referencedDeclaration": 280,
+                              "referencedDeclaration": 373,
                               "type": "contract Financer"
                             },
-                            "id": 230,
+                            "id": 323,
                             "name": "UserDefinedTypeName",
                             "src": "952:8:3"
                           }
                         ],
-                        "id": 231,
+                        "id": 324,
                         "name": "VariableDeclaration",
                         "src": "952:17:3"
                       },
@@ -2594,15 +2594,15 @@
                                 "attributes": {
                                   "contractScope": null,
                                   "name": "Financer",
-                                  "referencedDeclaration": 280,
+                                  "referencedDeclaration": 373,
                                   "type": "contract Financer"
                                 },
-                                "id": 232,
+                                "id": 325,
                                 "name": "UserDefinedTypeName",
                                 "src": "976:8:3"
                               }
                             ],
-                            "id": 233,
+                            "id": 326,
                             "name": "NewExpression",
                             "src": "972:12:3"
                           },
@@ -2612,11 +2612,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 223,
+                              "referencedDeclaration": 316,
                               "type": "address",
                               "value": "_addr"
                             },
-                            "id": 234,
+                            "id": 327,
                             "name": "Identifier",
                             "src": "985:5:3"
                           },
@@ -2626,27 +2626,27 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 225,
+                              "referencedDeclaration": 318,
                               "type": "string memory",
                               "value": "_name"
                             },
-                            "id": 235,
+                            "id": 328,
                             "name": "Identifier",
                             "src": "992:5:3"
                           }
                         ],
-                        "id": 236,
+                        "id": 329,
                         "name": "FunctionCall",
                         "src": "972:26:3"
                       }
                     ],
-                    "id": 237,
+                    "id": 330,
                     "name": "VariableDeclarationStatement",
                     "src": "952:46:3"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 229
+                      "functionReturnParameters": 322
                     },
                     "children": [
                       {
@@ -2655,36 +2655,36 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 231,
+                          "referencedDeclaration": 324,
                           "type": "contract Financer",
                           "value": "financer"
                         },
-                        "id": 238,
+                        "id": 331,
                         "name": "Identifier",
                         "src": "1016:8:3"
                       }
                     ],
-                    "id": 239,
+                    "id": 332,
                     "name": "Return",
                     "src": "1009:15:3"
                   }
                 ],
-                "id": 240,
+                "id": 333,
                 "name": "Block",
                 "src": "941:91:3"
               }
             ],
-            "id": 241,
+            "id": 334,
             "name": "FunctionDefinition",
             "src": "857:175:3"
           }
         ],
-        "id": 242,
+        "id": 335,
         "name": "ContractDefinition",
         "src": "176:865:3"
       }
     ],
-    "id": 243,
+    "id": 336,
     "name": "SourceUnit",
     "src": "33:1008:3"
   },
@@ -2696,12 +2696,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x4147B5b49cb7F92D86a30224da5Fa6fC16a70e60",
-      "transactionHash": "0xf9835a6e91f1476d89d1e1455a94d9c8aa602942aa2329e308738c8df9b6b162"
+      "address": "0xA7E1E1B9B6c348D4a73b003FbB4Ed04941A225bA",
+      "transactionHash": "0x46fa47e48c6396f57cfaa6459045ce8ab1aff33c5bfd98c2b61d491f6a6f2338"
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-03T21:55:56.034Z",
+  "updatedAt": "2021-02-04T22:04:37.860Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

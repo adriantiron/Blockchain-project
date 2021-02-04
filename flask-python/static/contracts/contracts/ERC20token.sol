@@ -9,4 +9,13 @@ contract ERC20token is ERC20{
         _setupDecimals(6);
         _mint(msg.sender, mint_amount * (10 ** uint256(decimals())));
     }
+    
+    function approveOverride(address sender, address recipient, uint amount) public {
+        uint toApprove = allowance(sender, recipient) + amount;
+        _approve(sender, recipient, toApprove);
+    }
+    
+    function transferOverride(address sender, address recipient, uint amount) public {
+        _transfer(sender, recipient, amount);
+    }
 }

@@ -16,5 +16,5 @@ module.exports = async function (deployer) {
     await deployer.deploy(Factory);
     var factory = await Factory.deployed();
 
-    await deployer.deploy(Marketplace, factory.address, token_manager.address);
+    await deployer.deploy(Marketplace, factory.address, token_manager.address, {gas: 20000000});
 };

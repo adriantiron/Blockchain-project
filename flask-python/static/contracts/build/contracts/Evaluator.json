@@ -114,15 +114,15 @@
     "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Evaluator.sol",
     "exportedSymbols": {
       "Evaluator": [
-        149
+        242
       ]
     },
-    "id": 150,
+    "id": 243,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 111,
+        "id": 204,
         "literals": [
           "solidity",
           ">=",
@@ -138,10 +138,10 @@
       {
         "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol",
         "file": "./GenericUser.sol",
-        "id": 112,
+        "id": 205,
         "nodeType": "ImportDirective",
-        "scope": 150,
-        "sourceUnit": 361,
+        "scope": 243,
+        "sourceUnit": 454,
         "src": "68:27:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -153,56 +153,56 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 113,
+              "id": 206,
               "name": "GenericUser",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 360,
+              "referencedDeclaration": 453,
               "src": "121:11:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_GenericUser_$360",
+                "typeIdentifier": "t_contract$_GenericUser_$453",
                 "typeString": "contract GenericUser"
               }
             },
-            "id": 114,
+            "id": 207,
             "nodeType": "InheritanceSpecifier",
             "src": "121:11:2"
           }
         ],
         "contractDependencies": [
-          360
+          453
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 149,
+        "id": 242,
         "linearizedBaseContracts": [
-          149,
-          360
+          242,
+          453
         ],
         "name": "Evaluator",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 147,
+              "id": 240,
               "nodeType": "Block",
               "src": "218:142:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 125,
+                    "id": 218,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 123,
+                      "id": 216,
                       "name": "addr",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 324,
+                      "referencedDeclaration": 417,
                       "src": "229:4:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -213,11 +213,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 124,
+                      "id": 217,
                       "name": "_addr",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 116,
+                      "referencedDeclaration": 209,
                       "src": "236:5:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -230,25 +230,25 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 126,
+                  "id": 219,
                   "nodeType": "ExpressionStatement",
                   "src": "229:12:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 133,
+                    "id": 226,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 127,
+                      "id": 220,
                       "name": "role",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 326,
+                      "referencedDeclaration": 419,
                       "src": "252:4:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -264,18 +264,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 130,
+                            "id": 223,
                             "name": "Roles",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 337,
+                            "referencedDeclaration": 430,
                             "src": "264:5:2",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_enum$_Roles_$337_$",
+                              "typeIdentifier": "t_type$_t_enum$_Roles_$430_$",
                               "typeString": "type(enum GenericUser.Roles)"
                             }
                           },
-                          "id": 131,
+                          "id": 224,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -285,7 +285,7 @@
                           "referencedDeclaration": null,
                           "src": "264:15:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_Roles_$337",
+                            "typeIdentifier": "t_enum$_Roles_$430",
                             "typeString": "enum GenericUser.Roles"
                           }
                         }
@@ -293,11 +293,11 @@
                       "expression": {
                         "argumentTypes": [
                           {
-                            "typeIdentifier": "t_enum$_Roles_$337",
+                            "typeIdentifier": "t_enum$_Roles_$430",
                             "typeString": "enum GenericUser.Roles"
                           }
                         ],
-                        "id": 129,
+                        "id": 222,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -309,7 +309,7 @@
                           "typeString": "type(uint256)"
                         },
                         "typeName": {
-                          "id": 128,
+                          "id": 221,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
                           "src": "259:4:2",
@@ -319,7 +319,7 @@
                           }
                         }
                       },
-                      "id": 132,
+                      "id": 225,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -340,25 +340,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 134,
+                  "id": 227,
                   "nodeType": "ExpressionStatement",
                   "src": "252:28:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 137,
+                    "id": 230,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 135,
+                      "id": 228,
                       "name": "rep",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 328,
+                      "referencedDeclaration": 421,
                       "src": "291:3:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -370,7 +370,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "35",
-                      "id": 136,
+                      "id": 229,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -391,25 +391,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 138,
+                  "id": 231,
                   "nodeType": "ExpressionStatement",
                   "src": "291:7:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 141,
+                    "id": 234,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 139,
+                      "id": 232,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 330,
+                      "referencedDeclaration": 423,
                       "src": "309:4:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -420,11 +420,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 140,
+                      "id": 233,
                       "name": "_name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 118,
+                      "referencedDeclaration": 211,
                       "src": "316:5:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -437,25 +437,25 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 142,
+                  "id": 235,
                   "nodeType": "ExpressionStatement",
                   "src": "309:12:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 145,
+                    "id": 238,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 143,
+                      "id": 236,
                       "name": "category",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 332,
+                      "referencedDeclaration": 425,
                       "src": "332:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -466,11 +466,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 144,
+                      "id": 237,
                       "name": "_category",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 120,
+                      "referencedDeclaration": 213,
                       "src": "343:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -483,14 +483,14 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 146,
+                  "id": 239,
                   "nodeType": "ExpressionStatement",
                   "src": "332:20:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 148,
+            "id": 241,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -498,17 +498,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 121,
+              "id": 214,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 116,
+                  "id": 209,
                   "mutability": "mutable",
                   "name": "_addr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 148,
+                  "scope": 241,
                   "src": "158:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -517,7 +517,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 115,
+                    "id": 208,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "158:7:2",
@@ -532,12 +532,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 118,
+                  "id": 211,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 148,
+                  "scope": 241,
                   "src": "173:19:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -546,7 +546,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 117,
+                    "id": 210,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "173:6:2",
@@ -560,12 +560,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 120,
+                  "id": 213,
                   "mutability": "mutable",
                   "name": "_category",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 148,
+                  "scope": 241,
                   "src": "194:23:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -574,7 +574,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 119,
+                    "id": 212,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "194:6:2",
@@ -590,19 +590,19 @@
               "src": "157:61:2"
             },
             "returnParameters": {
-              "id": 122,
+              "id": 215,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "218:0:2"
             },
-            "scope": 149,
+            "scope": 242,
             "src": "145:215:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 150,
+        "scope": 243,
         "src": "99:264:2"
       }
     ],
@@ -613,7 +613,7 @@
       "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/Evaluator.sol",
       "exportedSymbols": {
         "Evaluator": [
-          149
+          242
         ]
       },
       "license": "MIT"
@@ -631,22 +631,22 @@
             ".0"
           ]
         },
-        "id": 111,
+        "id": 204,
         "name": "PragmaDirective",
         "src": "33:31:2"
       },
       {
         "attributes": {
-          "SourceUnit": 361,
+          "SourceUnit": 454,
           "absolutePath": "/E/PROJECTS/Blockchain-project/flask-python/static/contracts/contracts/GenericUser.sol",
           "file": "./GenericUser.sol",
-          "scope": 150,
+          "scope": 243,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 112,
+        "id": 205,
         "name": "ImportDirective",
         "src": "68:27:2"
       },
@@ -654,17 +654,17 @@
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            360
+            453
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            149,
-            360
+            242,
+            453
           ],
           "name": "Evaluator",
-          "scope": 150
+          "scope": 243
         },
         "children": [
           {
@@ -676,15 +676,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "GenericUser",
-                  "referencedDeclaration": 360,
+                  "referencedDeclaration": 453,
                   "type": "contract GenericUser"
                 },
-                "id": 113,
+                "id": 206,
                 "name": "UserDefinedTypeName",
                 "src": "121:11:2"
               }
             ],
-            "id": 114,
+            "id": 207,
             "name": "InheritanceSpecifier",
             "src": "121:11:2"
           },
@@ -699,7 +699,7 @@
               ],
               "name": "",
               "overrides": null,
-              "scope": 149,
+              "scope": 242,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "public"
@@ -713,7 +713,7 @@
                       "mutability": "mutable",
                       "name": "_addr",
                       "overrides": null,
-                      "scope": 148,
+                      "scope": 241,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -727,12 +727,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 115,
+                        "id": 208,
                         "name": "ElementaryTypeName",
                         "src": "158:7:2"
                       }
                     ],
-                    "id": 116,
+                    "id": 209,
                     "name": "VariableDeclaration",
                     "src": "158:13:2"
                   },
@@ -742,7 +742,7 @@
                       "mutability": "mutable",
                       "name": "_name",
                       "overrides": null,
-                      "scope": 148,
+                      "scope": 241,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -755,12 +755,12 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 117,
+                        "id": 210,
                         "name": "ElementaryTypeName",
                         "src": "173:6:2"
                       }
                     ],
-                    "id": 118,
+                    "id": 211,
                     "name": "VariableDeclaration",
                     "src": "173:19:2"
                   },
@@ -770,7 +770,7 @@
                       "mutability": "mutable",
                       "name": "_category",
                       "overrides": null,
-                      "scope": 148,
+                      "scope": 241,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -783,17 +783,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 119,
+                        "id": 212,
                         "name": "ElementaryTypeName",
                         "src": "194:6:2"
                       }
                     ],
-                    "id": 120,
+                    "id": 213,
                     "name": "VariableDeclaration",
                     "src": "194:23:2"
                   }
                 ],
-                "id": 121,
+                "id": 214,
                 "name": "ParameterList",
                 "src": "157:61:2"
               },
@@ -804,7 +804,7 @@
                   ]
                 },
                 "children": [],
-                "id": 122,
+                "id": 215,
                 "name": "ParameterList",
                 "src": "218:0:2"
               },
@@ -829,11 +829,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 324,
+                              "referencedDeclaration": 417,
                               "type": "address",
                               "value": "addr"
                             },
-                            "id": 123,
+                            "id": 216,
                             "name": "Identifier",
                             "src": "229:4:2"
                           },
@@ -843,21 +843,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 116,
+                              "referencedDeclaration": 209,
                               "type": "address",
                               "value": "_addr"
                             },
-                            "id": 124,
+                            "id": 217,
                             "name": "Identifier",
                             "src": "236:5:2"
                           }
                         ],
-                        "id": 125,
+                        "id": 218,
                         "name": "Assignment",
                         "src": "229:12:2"
                       }
                     ],
-                    "id": 126,
+                    "id": 219,
                     "name": "ExpressionStatement",
                     "src": "229:12:2"
                   },
@@ -880,11 +880,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 326,
+                              "referencedDeclaration": 419,
                               "type": "uint256",
                               "value": "role"
                             },
-                            "id": 127,
+                            "id": 220,
                             "name": "Identifier",
                             "src": "252:4:2"
                           },
@@ -908,7 +908,7 @@
                                 "attributes": {
                                   "argumentTypes": [
                                     {
-                                      "typeIdentifier": "t_enum$_Roles_$337",
+                                      "typeIdentifier": "t_enum$_Roles_$430",
                                       "typeString": "enum GenericUser.Roles"
                                     }
                                   ],
@@ -924,12 +924,12 @@
                                       "name": "uint",
                                       "type": null
                                     },
-                                    "id": 128,
+                                    "id": 221,
                                     "name": "ElementaryTypeName",
                                     "src": "259:4:2"
                                   }
                                 ],
-                                "id": 129,
+                                "id": 222,
                                 "name": "ElementaryTypeNameExpression",
                                 "src": "259:4:2"
                               },
@@ -951,31 +951,31 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 337,
+                                      "referencedDeclaration": 430,
                                       "type": "type(enum GenericUser.Roles)",
                                       "value": "Roles"
                                     },
-                                    "id": 130,
+                                    "id": 223,
                                     "name": "Identifier",
                                     "src": "264:5:2"
                                   }
                                 ],
-                                "id": 131,
+                                "id": 224,
                                 "name": "MemberAccess",
                                 "src": "264:15:2"
                               }
                             ],
-                            "id": 132,
+                            "id": 225,
                             "name": "FunctionCall",
                             "src": "259:21:2"
                           }
                         ],
-                        "id": 133,
+                        "id": 226,
                         "name": "Assignment",
                         "src": "252:28:2"
                       }
                     ],
-                    "id": 134,
+                    "id": 227,
                     "name": "ExpressionStatement",
                     "src": "252:28:2"
                   },
@@ -998,11 +998,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 328,
+                              "referencedDeclaration": 421,
                               "type": "uint256",
                               "value": "rep"
                             },
-                            "id": 135,
+                            "id": 228,
                             "name": "Identifier",
                             "src": "291:3:2"
                           },
@@ -1019,17 +1019,17 @@
                               "type": "int_const 5",
                               "value": "5"
                             },
-                            "id": 136,
+                            "id": 229,
                             "name": "Literal",
                             "src": "297:1:2"
                           }
                         ],
-                        "id": 137,
+                        "id": 230,
                         "name": "Assignment",
                         "src": "291:7:2"
                       }
                     ],
-                    "id": 138,
+                    "id": 231,
                     "name": "ExpressionStatement",
                     "src": "291:7:2"
                   },
@@ -1052,11 +1052,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 330,
+                              "referencedDeclaration": 423,
                               "type": "string storage ref",
                               "value": "name"
                             },
-                            "id": 139,
+                            "id": 232,
                             "name": "Identifier",
                             "src": "309:4:2"
                           },
@@ -1066,21 +1066,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 118,
+                              "referencedDeclaration": 211,
                               "type": "string memory",
                               "value": "_name"
                             },
-                            "id": 140,
+                            "id": 233,
                             "name": "Identifier",
                             "src": "316:5:2"
                           }
                         ],
-                        "id": 141,
+                        "id": 234,
                         "name": "Assignment",
                         "src": "309:12:2"
                       }
                     ],
-                    "id": 142,
+                    "id": 235,
                     "name": "ExpressionStatement",
                     "src": "309:12:2"
                   },
@@ -1103,11 +1103,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 332,
+                              "referencedDeclaration": 425,
                               "type": "string storage ref",
                               "value": "category"
                             },
-                            "id": 143,
+                            "id": 236,
                             "name": "Identifier",
                             "src": "332:8:2"
                           },
@@ -1117,41 +1117,41 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 120,
+                              "referencedDeclaration": 213,
                               "type": "string memory",
                               "value": "_category"
                             },
-                            "id": 144,
+                            "id": 237,
                             "name": "Identifier",
                             "src": "343:9:2"
                           }
                         ],
-                        "id": 145,
+                        "id": 238,
                         "name": "Assignment",
                         "src": "332:20:2"
                       }
                     ],
-                    "id": 146,
+                    "id": 239,
                     "name": "ExpressionStatement",
                     "src": "332:20:2"
                   }
                 ],
-                "id": 147,
+                "id": 240,
                 "name": "Block",
                 "src": "218:142:2"
               }
             ],
-            "id": 148,
+            "id": 241,
             "name": "FunctionDefinition",
             "src": "145:215:2"
           }
         ],
-        "id": 149,
+        "id": 242,
         "name": "ContractDefinition",
         "src": "99:264:2"
       }
     ],
-    "id": 150,
+    "id": 243,
     "name": "SourceUnit",
     "src": "33:330:2"
   },
@@ -1161,7 +1161,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-03T21:55:56.033Z",
+  "updatedAt": "2021-02-04T22:04:37.858Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
