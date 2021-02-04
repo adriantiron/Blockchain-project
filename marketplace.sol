@@ -15,7 +15,7 @@ contract Marketplace {
     ERC20token_manager private tkn_mng;
     uint public productsNu = 0;
         
-    enum States{ Funding, Started, Finished, Retired }
+    enum States{ Funding, Started, Finished, Retired, Evaluation }
     enum Roles{ Manager, Freelancer, Evaluator, Financer}
 
     // Role: 0 - manager | 1 - freelancer | 2 - evaluator | 3 - financer
@@ -25,11 +25,13 @@ contract Marketplace {
         uint rep;
         string name;
         string category;
+
     }
 
     struct freelancerShare{
         address adr;
-        uint share;
+        uint share; // from 1% to 100% of prod dev
+        uint rep; // for which freelancer to select
     }
 
     struct prodStruct{
@@ -40,6 +42,12 @@ contract Marketplace {
         uint rev;
         string category;
         States currentState;
+
+        freelancerShare[] applied_freelancers;
+        genericUser applied_evaluator;
+
+        freelancerShare[] selected_freelancers; // who to select
+        uint alloc_share; // current allocated share (0%->100%)
     }
 
     constructor (Factory _uf, ERC20token_manager _tkn_mng){
@@ -104,6 +112,16 @@ contract Marketplace {
     
     modifier onlyFinancer {
         require(users_contracts[msg.sender].role() == uint(Roles.Financer));
+        _;
+    }
+
+    modifier onlyFreelancer {
+        require(users_contracts[msg.sender].role() == uint(Roles.Freelancer));
+        _;
+    }
+
+    modifier onlyEvaluator {
+        require(users_contracts[msg.sender].role() == uint(Roles.Evaluator));
         _;
     }
     
@@ -219,5 +237,136 @@ contract Marketplace {
         }
         
         products_contracts[_prod_id].giveBackAllFunds(); 
+    }
+
+    function selectFreelancers() public onlyManager {
+        for (uint i=0; i<products_structs.length; i++) { // for every product
+            prodStruct current_product = products_structs[i];
+
+            while(current_product.alloc_share < 100 && current_product.applied_freelancers.length > 0) {
+                // while not enough freelancers were selected
+
+                freelancerShare best_freelancer = current_product.applied_freelancers[0]; // current best freelancer is the first one
+                uint best_fl_index = 0;
+
+                for (uint j=1; j<current_product.applied_freelancers.length; j++) { // for every other applied freelancer
+                    freelancerShare current_freelancer = current_product.applied_freelancers[j];
+
+                    if(current_freelancer.rep > best_freelancer.rep && 
+                        current_freelancer.share + current_product.alloc_share <= 100) { // if rep is better and share isnt bigger than max
+                        best_freelancer = current_freelancer;
+                        best_fl_index = j;
+                    }
+                }
+
+                if(best_freelancer.share + current_product.alloc_share > 100) {
+                    break; // all remaining applied freelancers want too much share
+                }
+
+                current_product.selected_freelancers.push(best_freelancer);
+                current_product.alloc_share += best_freelancer.share; // best freelancer is selected and current allocated share is updated
+                delete current_product.applied_freelancers[best_fl_index];
+            }
+
+            if(current_product.alloc_share == 100) {
+                current_product.currentState = States.Started; // can start developing this product
+            }
+            else {
+                current_product.currentState = States.Retired;
+            }
+        }
+    }
+
+    function notifyManager(uint _prod_id) public onlyFreelancer { // finished development
+        //find the specific product
+        for (uint i=0; i<products_structs.length; i++) {
+            prodStruct current_product = products_structs[i];
+            if(current_product.product_id != _prod_id) {
+                continue;
+            }
+            //check if sender is working on it
+            for (uint j=0; j<current_product.selected_freelancers.length; j++) {
+                freelancerShare current_freelancer = current_product.selected_freelancers[j];
+                if(current_freelancer.adr != msg.sender) {
+                    continue;
+                }
+                //notify finished product
+                current_product.currentState = States.Finished;
+            }
+        }
+    }
+
+    function acceptResult(uint _prod_id, bool accept) public onlyManager {
+        //find the specific product
+        for (uint i=0; i<products_structs.length; i++) {
+            prodStruct current_product = products_structs[i];
+            if(current_product.product_id != _prod_id) {
+                continue;
+            }
+
+            if(current_product.currentState == States.Finished) {
+                // if manager accepts to pay freelancers
+                if(accept) {
+                    for (uint j=0; j<current_product.selected_freelancers.length; j++) {
+                        freelancerShare current_freelancer = current_product.selected_freelancers[j];
+
+                        //transfer money to freelancer based on his share
+                        uint amount = (current_freelancer.share * current_product.dev) / 100;
+                        tkn_mng.transferFrom(man_addr, current_freelancer.adr, amount);
+                        //increment freelancer rep
+                        if(current_freelancer.rep < 10) {
+                            current_freelancer.rep += 1;
+                        }
+                    }
+                    current_product.currentState = States.Retired;
+                }
+                else {
+                    current_product.currentState = States.Evaluation;
+                }
+            }
+        }
+    }
+
+    function evaluateProduct(uint _prod_id, bool accept) public onlyEvaluator {
+        //find the specific product
+        for (uint i=0; i<products_structs.length; i++) {
+            prodStruct current_product = products_structs[i];
+            if(current_product.product_id != _prod_id) {
+                continue;
+            }
+
+            if(current_product.currentState == States.Evaluation) {
+                // if evaluator accepts to pay freelancers
+                if(accept) {
+                    for (uint j=0; j<current_product.selected_freelancers.length; j++) {
+                        freelancerShare current_freelancer = current_product.selected_freelancers[j];
+
+                        //transfer money to freelancer based on his share
+                        uint amount = (current_freelancer.share * current_product.dev) / 100;
+                        tkn_mng.transferFrom(man_addr, current_freelancer.adr, amount);
+                        //increment freelancer rep
+                        if(current_freelancer.rep < 10) {
+                            current_freelancer.rep += 1;
+                        }
+                    }
+                    current_product.currentState = States.Retired;
+
+                    //TODO decrement manager rep
+                }
+                else {
+                    for (uint j=0; j<current_product.selected_freelancers.length; j++) {
+                        freelancerShare current_freelancer = current_product.selected_freelancers[j];
+
+                        //decrement freelancer rep
+                        if(current_freelancer.rep > 1) {
+                            current_freelancer.rep -= 1;
+                        }
+                    }
+                    // mark the current product for redevelopment
+                    current_product.alloc_share = 0;
+                    delete current_product.selected_freelancers;
+                    current_product.currentState = States.Funding;
+                }
+        }
     }
 }
