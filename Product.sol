@@ -9,8 +9,12 @@ contract Product {
     uint public rev;
     string public category;
     States currentState;
+    mapping (address => uint256) public shares;
+    mapping (address => bool) public financer_exists;
+    address[] public financers;
+    uint public funded_sum;
     
-    enum States{ Defined, Started, Finished}
+    enum States{ Funding, Started, Finished, Retired }
     
     constructor (uint _prod_id, address _mng_addr, string memory _description, uint _dev, uint _rev, string memory _category) {
         product_id = _prod_id;
@@ -19,10 +23,58 @@ contract Product {
         dev = _dev;
         rev = _rev;
         category = _category;
-        currentState = States.Defined;
+        currentState = States.Funding;
+        funded_sum = 0;
     }
     
     function getState() public view returns (uint){
         return uint(currentState);
+    }
+    
+    function getFinancersLength() public view returns (uint) {
+        return financers.length;
+    }
+    
+    function check_sum() private {
+        if (funded_sum >= (dev + rev)) {
+            currentState = States.Started;
+        }
+    }
+    
+    function storeShare(address _financer, uint _amount) public {
+        require(currentState == States.Funding, "You cannot share funds now!");
+        
+        shares[_financer] += _amount;
+        funded_sum += _amount;
+        if (!financer_exists[_financer]){
+            financer_exists[_financer] = true;
+            financers.push(_financer);
+        }
+        check_sum();
+    }
+    
+    function withdrawShare(address _financer, uint _amount) public {
+        require(currentState == States.Funding, "You cannot take back funds now!");
+
+        shares[_financer] -= _amount;
+        funded_sum -= _amount;
+        
+        if (shares[_financer] == 0 && financer_exists[_financer]){
+            financer_exists[_financer] = false;
+        }
+    }
+    
+    function giveBackAllFunds() public {
+        require(currentState == States.Funding, "You cannot give back funds now!");
+        currentState = States.Retired;
+        
+        for(uint it = 0; it < financers.length; it++) {
+            if (financer_exists[financers[it]]){
+                shares[financers[it]] = 0;
+                financer_exists[financers[it]] = false;
+            }
+        }
+        funded_sum = 0;
+        delete financers;
     }
 }

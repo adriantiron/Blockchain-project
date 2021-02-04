@@ -15,7 +15,7 @@ contract Marketplace {
     ERC20token_manager private tkn_mng;
     uint public productsNu = 0;
         
-    enum States{ defined, started, finished}
+    enum States{ Funding, Started, Finished, Retired }
     enum Roles{ Manager, Freelancer, Evaluator, Financer}
 
     // Role: 0 - manager | 1 - freelancer | 2 - evaluator | 3 - financer
@@ -102,6 +102,11 @@ contract Marketplace {
         _;
     }
     
+    modifier onlyFinancer {
+        require(users_contracts[msg.sender].role() == uint(Roles.Financer));
+        _;
+    }
+    
     function createUserStruct(address _addr) private view returns (genericUser memory){
         genericUser memory gu;
         gu.addr = users_contracts[_addr].addr();
@@ -169,13 +174,50 @@ contract Marketplace {
         uint int_state = products_contracts[_prod_id].getState();
         
         if (int_state == 0){
-            str_state = "Defined";
+            str_state = "Funding";
         }else if (int_state == 1){
             str_state = "Started";
-        }else{
+        }else if (int_state == 2){
             str_state = "Finished";
+        }else{
+            str_state = "Retired";
         }
         
         return (products_contracts[_prod_id].manager_address(), products_contracts[_prod_id].description(), products_contracts[_prod_id].dev(), products_contracts[_prod_id].rev(), products_contracts[_prod_id].category(), str_state);
+    }
+    
+    function finance_product(uint _prod_id, uint _token_amount) public onlyFinancer {
+        require(_prod_id < productsNu, "Product does not exist!");
+        
+        address fin_addr = msg.sender;
+        address man_addr = products_contracts[_prod_id].manager_address();
+        tkn_mng.transferFrom(fin_addr, man_addr, _token_amount);
+        products_contracts[_prod_id].storeShare(fin_addr, _token_amount);
+    }
+    
+    function withdraw_sum(uint _prod_id, uint _token_amount) public onlyFinancer {
+        require(_prod_id < productsNu, "Product does not exist!");
+        address fin_addr = msg.sender;
+        address man_addr = products_contracts[_prod_id].manager_address();
+        require(products_contracts[_prod_id].shares(fin_addr) >= _token_amount, "You asked for more than you gave...");
+        
+        tkn_mng.transferFrom(man_addr, fin_addr, _token_amount);
+        products_contracts[_prod_id].withdrawShare(fin_addr, _token_amount);
+    }
+    
+    function retireProduct(uint _prod_id) public onlyManager {
+        require(_prod_id < productsNu, "Product does not exist!");
+        require(products_contracts[_prod_id].getState() == uint(States.Funding), "Product is done funding already...");
+        
+        address man_addr = msg.sender;
+        for(uint it = 0; it < products_contracts[_prod_id].getFinancersLength(); it++) {
+            address _fin_add = products_contracts[_prod_id].financers(it);
+            
+            if (products_contracts[_prod_id].financer_exists(_fin_add)){
+                tkn_mng.transferFrom(man_addr, _fin_add, products_contracts[_prod_id].shares(_fin_add));
+            }
+        }
+        
+        products_contracts[_prod_id].giveBackAllFunds(); 
     }
 }
