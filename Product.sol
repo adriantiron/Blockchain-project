@@ -22,7 +22,7 @@ contract Product {
     mapping (address => bool) public chosen_freelancer_exists;
     uint public alloc_share;
     
-    enum States{ Funding, Teaming, Started, Finished, Retired, Evaluation }
+    enum States{ Funding, Teaming, Started, Finished, Published, Retired, Evaluation }
     
     constructor (uint _prod_id, address _mng_addr, string memory _description, uint _dev, uint _rev, string memory _category) {
         product_id = _prod_id;

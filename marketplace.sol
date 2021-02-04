@@ -17,7 +17,7 @@ contract Marketplace {
     uint public productsNu = 0;
     mapping(address => freelancerShare) freelancers_map;
     
-    enum States{ Funding, Teaming, Started, Finished, Retired, Evaluation }
+    enum States{ Funding, Teaming, Started, Finished, Published, Retired, Evaluation }
     enum Roles{ Manager, Freelancer, Evaluator, Financer}
 
     // Role: 0 - manager | 1 - freelancer | 2 - evaluator | 3 - financer
@@ -60,33 +60,12 @@ contract Marketplace {
         address freelancer_0_addr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
         address freelancer_1_addr = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;
         address freelancer_2_addr = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB;
-        address freelancer_3_addr = 0x617F2E2fD72FD9D5503197092aC168c91465E7f2;
-        
+
         address evaluator_0_addr = 0x17F6AD8Ef982297579C203069C1DbfFE4348c372;
         address evaluator_1_addr = 0x5c6B0f7Bf3E7ce046039Bd8FABdfD3f9F5021678;
-        address evaluator_2_addr = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7;
-        address evaluator_3_addr = 0x1aE0EA34a72D944a8C7603FfB3eC30a6669E454C;
         
         address financer_0_addr = 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB;
-        address financer_1_addr = 0x583031D1113aD414F02576BD6afaBfb302140225;
-        address financer_2_addr = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
-        
-        // Ganache
-        /*address manager_addr = 0x9D5818ac8D429B4aB51Ff0e40ec83790755eD3a5;
-        
-        address freelancer_0_addr = 0xc9980FF6e1370dc7EFA5607C662ebB7953dEe231;
-        address freelancer_1_addr = 0xC2087837E54dDeD0e57DD0cF74826680A2E9D349;
-        address freelancer_2_addr = 0xc06D847E919bF34507c866260884B4B415171bA3;
-        address freelancer_3_addr = 0xd1f079782484620250afdAbd5E85F793601B9Bc3;
-        
-        address evaluator_0_addr = 0x3F0C6e33b12e7144450B2785269e27FAFD86a28c;
-        address evaluator_1_addr = 0x049Eb93680C7b8b98BaC6a54D874910fd88d4564;
-        address evaluator_2_addr = 0xeF43023060eCa4Aad93b4368322Ffe823770926C;
-        address evaluator_3_addr = 0xB3c81f904B6DfDed618BbD38BEd3eAF6CaE42286;
-        
-        address financer_0_addr = 0x2e9ec3A179D45B767a2b7F251b13C8038afBf8A7;
-        address financer_1_addr = 0x4EFE3F7AE0aF8C1E33806B76f44fa041650CEce2;
-        address financer_2_addr = 0x39565f1a1e5058465C00558A1734b92051E5dD5f;*/
+        address financer_1_addr = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
         
         // create user contracts and store
         storeAndAllocUser(_uf.new_manager(manager_addr, "manager"), 2000);
@@ -94,16 +73,12 @@ contract Marketplace {
         storeAndAllocUser(_uf.new_freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency"), 2500);
         storeAndAllocUser(_uf.new_freelancer(freelancer_1_addr, "freelancer-1", "Games"), 3000);
         storeAndAllocUser(_uf.new_freelancer(freelancer_2_addr, "freelancer-2", "Games"), 7500);
-        storeAndAllocUser(_uf.new_freelancer(freelancer_3_addr, "freelancer-3", "Cryptocurrency"), 4400);
         
         storeAndAllocUser(_uf.new_evaluator(evaluator_0_addr, "evaluator-0", "Games"), 700);
         storeAndAllocUser(_uf.new_evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency"), 950);
-        storeAndAllocUser(_uf.new_evaluator(evaluator_2_addr, "evaluator-2", "Games"), 1100);
-        storeAndAllocUser(_uf.new_evaluator(evaluator_3_addr, "evaluator-3", "Cryptocurrency"), 500);
         
         storeAndAllocUser(_uf.new_financer(financer_0_addr, "financer-0"), 30000);
-        storeAndAllocUser(_uf.new_financer(financer_1_addr, "financer-1"), 25000);
-        storeAndAllocUser(_uf.new_financer(financer_2_addr, "financer-2"), 50000);
+        storeAndAllocUser(_uf.new_financer(financer_1_addr, "financer-2"), 50000);
     }
     
     modifier onlyManager {
@@ -177,54 +152,26 @@ contract Marketplace {
         storeProduct(product);
     }
     
-    function getUserProfile(address _addr) public view returns (string memory name, string memory role, uint reputation, uint balance, string memory category) {
-        string memory str_role;
-        uint256 int_role = uint(users_contracts[_addr].role());
-        GenericUser usr = users_contracts[_addr];
-        
-        if (int_role == 0){
-            str_role = "Manager";
-        }else if (int_role == 1){
-            str_role = "Freelancer";
-        }else if (int_role == 2){
-            str_role = "Evaluator";
-        }else{
-            str_role = "Financer";
-        }
-        
-        return (usr.name(), str_role, usr.rep(), tkn_mng.getBalanceOf(_addr), usr.category());
+    function getThisBalance() public view returns (uint){
+        return (tkn_mng.getBalanceOf(address(this)));
     }
     
-    function getProductDetails(uint _prod_id) public view returns (address manager_address, string memory description, uint dev, uint rev, string memory category, string memory state, uint funded_sum) {
+    function getUserProfile(address _addr) public view returns (uint role, uint reputation, uint balance, string memory category) {
+        return (users_contracts[_addr].role(), users_contracts[_addr].rep(), tkn_mng.getBalanceOf(_addr), users_contracts[_addr].category());
+    }
+    
+    function getProductDetails(uint _prod_id) public view returns (uint dev, uint rev, string memory category, uint state, uint funded_sum) {
         require(_prod_id < productsNu, "Product does not exist!");
-        
-        string memory str_state;
-        uint int_state = products_contracts[_prod_id].getState();
         Product prd = products_contracts[_prod_id];
         
-        if (int_state == 0){
-            str_state = "Funding";
-        }else if (int_state == 1){
-            str_state = "Teaming";
-        }else if (int_state == 2){
-            str_state = "Started";
-        }else if (int_state == 3){
-            str_state = "Finished";
-        }else if (int_state == 4){
-            str_state = "Retired";
-        }else{
-            str_state = "Evaluation";
-        }
-        
-        return (prd.manager_address(), prd.description(), prd.dev(), prd.rev(), prd.category(), str_state, prd.funded_sum());
+        return (prd.dev(), prd.rev(), prd.category(), prd.getState(), prd.funded_sum());
     }
     
     function finance_product(uint _prod_id, uint _token_amount) public onlyFinancer {
         require(_prod_id < productsNu, "Product does not exist!");
         
         address fin_addr = msg.sender;
-        address man_addr = products_contracts[_prod_id].manager_address();
-        tkn_mng.transferFrom(fin_addr, man_addr, _token_amount);
+        tkn_mng.transferFrom(fin_addr, address(this), _token_amount);
         products_contracts[_prod_id].storeShare(fin_addr, _token_amount);
         
         if (products_contracts[_prod_id].getState() == uint(States.Teaming)){
@@ -235,10 +182,9 @@ contract Marketplace {
     function withdraw_sum(uint _prod_id, uint _token_amount) public onlyFinancer {
         require(_prod_id < productsNu, "Product does not exist!");
         address fin_addr = msg.sender;
-        address man_addr = products_contracts[_prod_id].manager_address();
         require(products_contracts[_prod_id].shares(fin_addr) >= _token_amount, "You asked for more than you gave...");
         
-        tkn_mng.transferFrom(man_addr, fin_addr, _token_amount);
+        tkn_mng.transferFrom(address(this), fin_addr, _token_amount);
         products_contracts[_prod_id].withdrawShare(fin_addr, _token_amount);
     }
     
@@ -246,12 +192,11 @@ contract Marketplace {
         require(_prod_id < productsNu, "Product does not exist!");
         require(products_contracts[_prod_id].getState() == uint(States.Funding), "Product is done funding already...");
         
-        address man_addr = msg.sender;
         for(uint it = 0; it < products_contracts[_prod_id].getFinancersLength(); it++) {
             address _fin_add = products_contracts[_prod_id].financers(it);
             
             if (products_contracts[_prod_id].financer_exists(_fin_add)){
-                tkn_mng.transferFrom(man_addr, _fin_add, products_contracts[_prod_id].shares(_fin_add));
+                tkn_mng.transferFrom(address(this), _fin_add, products_contracts[_prod_id].shares(_fin_add));
             }
         }
         
@@ -259,14 +204,11 @@ contract Marketplace {
         products_structs[_prod_id].currentState = States.Retired;
     }
     
-    function getListOfProducts() public view onlyFreelancerOrEvaluator returns (prodStruct[] memory){
-    	return products_structs;
-    }
-    
     function registerForEvaluation(uint _prod_id) public onlyEvaluator{
         require(_prod_id < productsNu, "Product does not exist!");
         require(keccak256(abi.encodePacked((users_contracts[msg.sender].category()))) == keccak256(abi.encodePacked((products_contracts[_prod_id].category()))), "You do not specialize in the product's category!");
         require(products_contracts[_prod_id].evaluator() == address(0), "There already is an evaluator for this product!");
+        require(products_contracts[_prod_id].getState() == uint(States.Teaming));
         
         products_structs[_prod_id].applied_evaluator = msg.sender;
         products_contracts[_prod_id].storeEvaluator(msg.sender);
@@ -277,6 +219,7 @@ contract Marketplace {
         require(keccak256(abi.encodePacked((users_contracts[msg.sender].category()))) == keccak256(abi.encodePacked((products_contracts[_prod_id].category()))), "You do not specialize in the product's category!");
         require(!products_contracts[_prod_id].freelancer_exists(msg.sender), "This freelancer has already registered!");
         require(_dev_amount > 0, "DEV sum must be bigger than 0!");
+        require(products_contracts[_prod_id].getState() == uint(States.Teaming));
         
         products_structs[_prod_id].applied_freelancers.push(msg.sender);
         products_contracts[_prod_id].storeFreelancer(msg.sender);
@@ -337,8 +280,8 @@ contract Marketplace {
             products_contracts[_prod_id].setState(uint(States.Started));
         }
         else {
-            products_structs[_prod_id].currentState = States.Retired;
-            products_contracts[_prod_id].setState(uint(States.Retired));
+            products_structs[_prod_id].currentState = States.Teaming;
+            products_contracts[_prod_id].setState(uint(States.Teaming));
         }
     }
 
@@ -365,13 +308,14 @@ contract Marketplace {
         
         // if manager accepts to pay freelancers
         if(accept) {
+            tkn_mng.transferFrom(address(this), man_addr, current_product.rev());
             users_contracts[man_addr].rep_up();
 
             for (uint j=0; j<current_product.getChosenFreelancersLength(); j++) {
                 address current_freelancer = current_product.chosen_freelancers(j);
                 
                 //transfer money to freelancer based on his share
-                tkn_mng.transferFrom(man_addr, current_freelancer, freelancers_map[current_freelancer].share);
+                tkn_mng.transferFrom(address(this), current_freelancer, freelancers_map[current_freelancer].share);
                 
                 //increment freelancer rep
                 if(freelancers_map[current_freelancer].rep < 10) {
@@ -379,8 +323,8 @@ contract Marketplace {
                 }
                 users_contracts[current_freelancer].rep_up();
             }
-            products_contracts[_prod_id].setState(uint(States.Retired));
-            products_structs[_prod_id].currentState = States.Retired;
+            products_contracts[_prod_id].setState(uint(States.Published));
+            products_structs[_prod_id].currentState = States.Published;
         }
         else {
             products_contracts[_prod_id].setState(uint(States.Evaluation));
@@ -395,7 +339,7 @@ contract Marketplace {
         require(msg.sender == current_product.evaluator(), "You are not the evaluator for this product!");
         
         address man_addr = current_product.manager_address();
-        tkn_mng.transferFrom(man_addr, msg.sender, current_product.rev());
+        tkn_mng.transferFrom(address(this), msg.sender, current_product.rev());
         
         // if evaluator accepts to pay freelancers
         if(accept) {
@@ -403,7 +347,7 @@ contract Marketplace {
                 address current_freelancer = current_product.chosen_freelancers(j);
                 
                 //transfer money to freelancer based on his share
-                tkn_mng.transferFrom(man_addr, current_freelancer, freelancers_map[current_freelancer].share);
+                tkn_mng.transferFrom(address(this), current_freelancer, freelancers_map[current_freelancer].share);
                 
                 //increment freelancer rep
                 if(freelancers_map[current_freelancer].rep < 10) {
@@ -411,8 +355,8 @@ contract Marketplace {
                 }
                 users_contracts[current_freelancer].rep_up();
             }
-            products_contracts[_prod_id].setState(uint(States.Retired));
-            products_structs[_prod_id].currentState = States.Retired;
+            products_contracts[_prod_id].setState(uint(States.Published));
+            products_structs[_prod_id].currentState = States.Published;
             
             if(freelancers_map[man_addr].rep > 1) {
                     freelancers_map[man_addr].rep -= 1;
