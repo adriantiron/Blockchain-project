@@ -9,15 +9,20 @@ contract Product {
     uint public rev;
     string public category;
     States currentState;
-    mapping (address => uint256) public shares;
-    mapping (address => bool) public financer_exists;
-    address[] public financers;
+    
     uint public funded_sum;
+    mapping (address => uint256) public shares;
+    address[] public financers;
+    mapping (address => bool) public financer_exists;
+    
     address public evaluator;
     address[] public freelancers;
+    address[] public chosen_freelancers;
     mapping (address => bool) public freelancer_exists;
+    mapping (address => bool) public chosen_freelancer_exists;
+    uint public alloc_share;
     
-    enum States{ Funding, Started, Finished, Retired }
+    enum States{ Funding, Teaming, Started, Finished, Retired, Evaluation }
     
     constructor (uint _prod_id, address _mng_addr, string memory _description, uint _dev, uint _rev, string memory _category) {
         product_id = _prod_id;
@@ -34,8 +39,20 @@ contract Product {
         return uint(currentState);
     }
     
+    function setState(uint _st) public {
+        currentState = States(_st);
+    }
+    
     function getFinancersLength() public view returns (uint) {
         return financers.length;
+    }
+    
+    function getFreelancersLength() public view returns (uint) {
+        return freelancers.length;
+    }
+    
+    function getChosenFreelancersLength() public view returns (uint) {
+        return chosen_freelancers.length;
     }
     
     function storeEvaluator(address _ev) public {
@@ -48,9 +65,29 @@ contract Product {
         freelancer_exists[_fr] = true;
     }
     
+    function teamFreelancer(address _fr) public {
+        require(chosen_freelancer_exists[_fr] == false, "Freelancer is already teamed up!");
+        chosen_freelancers.push(_fr);
+        chosen_freelancer_exists[_fr] = true;
+    }
+    
+    function resetFreelancer(uint _idx) public {
+        freelancers[_idx] = address(0);
+    }
+    
+    function deleteAllFreelancersAndEvaluator() public {
+        delete freelancers;
+        delete chosen_freelancers;
+        delete evaluator;
+    }
+    
+    function addAllocShare(uint _sh) public {
+        alloc_share += _sh;
+    }
+    
     function check_sum() private {
         if (funded_sum >= (dev + rev)) {
-            currentState = States.Started;
+            currentState = States.Teaming;
         }
     }
     

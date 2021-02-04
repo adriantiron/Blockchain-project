@@ -17,7 +17,7 @@ contract Marketplace {
     uint public productsNu = 0;
     mapping(address => freelancerShare) freelancers_map;
     
-    enum States{ Funding, Started, Finished, Retired, Evaluation }
+    enum States{ Funding, Teaming, Started, Finished, Retired, Evaluation }
     enum Roles{ Manager, Freelancer, Evaluator, Financer}
 
     // Role: 0 - manager | 1 - freelancer | 2 - evaluator | 3 - financer
@@ -205,11 +205,15 @@ contract Marketplace {
         if (int_state == 0){
             str_state = "Funding";
         }else if (int_state == 1){
-            str_state = "Started";
+            str_state = "Teaming";
         }else if (int_state == 2){
+            str_state = "Started";
+        }else if (int_state == 3){
             str_state = "Finished";
-        }else{
+        }else if (int_state == 4){
             str_state = "Retired";
+        }else{
+            str_state = "Evaluation";
         }
         
         return (prd.manager_address(), prd.description(), prd.dev(), prd.rev(), prd.category(), str_state, prd.funded_sum());
@@ -222,6 +226,10 @@ contract Marketplace {
         address man_addr = products_contracts[_prod_id].manager_address();
         tkn_mng.transferFrom(fin_addr, man_addr, _token_amount);
         products_contracts[_prod_id].storeShare(fin_addr, _token_amount);
+        
+        if (products_contracts[_prod_id].getState() == uint(States.Teaming)){
+            products_structs[_prod_id].currentState = States.Teaming;
+        }
     }
     
     function withdraw_sum(uint _prod_id, uint _token_amount) public onlyFinancer {
@@ -248,6 +256,7 @@ contract Marketplace {
         }
         
         products_contracts[_prod_id].giveBackAllFunds(); 
+        products_structs[_prod_id].currentState = States.Retired;
     }
     
     function getListOfProducts() public view onlyFreelancerOrEvaluator returns (prodStruct[] memory){
@@ -274,143 +283,161 @@ contract Marketplace {
         freelancers_map[msg.sender].rep = users_contracts[msg.sender].rep();
         
         if (_dev_amount >= products_contracts[_prod_id].dev()){
-            freelancers_map[msg.sender].share = 100;
-        }else{ // 100 is for no decimals, increase the number for bigger precision
-            freelancers_map[msg.sender].share = (_dev_amount * 100) / products_contracts[_prod_id].dev(); 
+            freelancers_map[msg.sender].share = products_contracts[_prod_id].dev();
+        }else{
+            freelancers_map[msg.sender].share = _dev_amount; 
         }
     }
 
-    function selectFreelancers() public onlyManager {
-        for (uint i=0; i<products_structs.length; i++) { // for every product
-            prodStruct memory current_product = products_structs[i];
-
-            while(current_product.alloc_share < 100 && current_product.applied_freelancers.length > 0) {
-                // while not enough freelancers were selected
-
-                address best_freelancer = current_product.applied_freelancers[0]; // current best freelancer is the first one
-                uint best_fl_index = 0;
-
-                for (uint j=1; j<current_product.applied_freelancers.length; j++) { // for every other applied freelancer
-                    address current_freelancer = current_product.applied_freelancers[j];
-
-                    if(freelancers_map[current_freelancer].rep > freelancers_map[best_freelancer].rep && 
-                        freelancers_map[current_freelancer].share + current_product.alloc_share <= 100) { // if rep is better and share isnt bigger than max
-                        best_freelancer = current_freelancer;
-                        best_fl_index = j;
-                    }
-                }
-
-                if(freelancers_map[best_freelancer].share + current_product.alloc_share > 100) {
-                    break; // all remaining applied freelancers want too much share
-                }
-
-                products_structs[i].selected_freelancers.push(best_freelancer);
-                products_structs[i].alloc_share += freelancers_map[best_freelancer].share; // best freelancer is selected and current allocated share is updated
-                delete current_product.applied_freelancers[best_fl_index];
-            }
-
-            if(current_product.alloc_share == 100) {
-                current_product.currentState = States.Started; // can start developing this product
-            }
-            else {
-                current_product.currentState = States.Retired;
-            }
-        }
-    }
-
-    function notifyManager(uint _prod_id) public view onlyFreelancer { // finished development
-        //find the specific product
-        for (uint i=0; i<products_structs.length; i++) {
-            prodStruct memory current_product = products_structs[i];
-            if(current_product.product_id != _prod_id) {
-                continue;
-            }
-            //check if sender is working on it
-            for (uint j=0; j<current_product.selected_freelancers.length; j++) {
-                address current_freelancer = current_product.selected_freelancers[j];
-                if(current_freelancer != msg.sender) {
+    function selectFreelancers(uint _prod_id) public onlyManager {
+        require(_prod_id < productsNu, "Product does not exist!");
+        require(products_contracts[_prod_id].getState() == uint(States.Teaming));
+        
+        Product current_product = products_contracts[_prod_id];
+        uint dev_goal = products_contracts[_prod_id].dev();
+        uint freel_index = 0;
+        
+        while(current_product.alloc_share() < dev_goal && freel_index < current_product.getFreelancersLength()) {
+            // while not enough freelancers were selected
+            
+            address best_freelancer = current_product.freelancers(0); // current best freelancer is the first one
+            uint best_fl_index = 0;
+            
+            for (uint j=1; j < current_product.getFreelancersLength(); j++) { // for every other applied freelancer
+                address current_freelancer = current_product.freelancers(j);
+                
+                if (current_freelancer == address(0)){
                     continue;
                 }
-                //notify finished product
-                current_product.currentState = States.Finished;
+                
+                if(freelancers_map[current_freelancer].rep > freelancers_map[best_freelancer].rep && 
+                    (freelancers_map[current_freelancer].share + current_product.alloc_share()) <= dev_goal) { // if rep is better and share isnt bigger than max
+                    best_freelancer = current_freelancer;
+                    best_fl_index = j;
+                }
             }
+
+            if(freelancers_map[best_freelancer].share + current_product.alloc_share() > dev_goal) {
+                break; // all remaining applied freelancers want too much share
+            }
+
+            products_structs[_prod_id].selected_freelancers.push(best_freelancer);
+            products_structs[_prod_id].alloc_share += freelancers_map[best_freelancer].share; // best freelancer is selected and current allocated share is updated
+            products_structs[_prod_id].applied_freelancers[best_fl_index] = address(0);
+            
+            products_contracts[_prod_id].teamFreelancer(best_freelancer);
+            products_contracts[_prod_id].addAllocShare(freelancers_map[best_freelancer].share);
+            products_contracts[_prod_id].resetFreelancer(best_fl_index);
+            
+            freel_index++;
+        }
+
+        if(current_product.alloc_share() >= dev_goal) {
+            products_structs[_prod_id].currentState = States.Started; // can start developing this product
+            products_contracts[_prod_id].setState(uint(States.Started));
+        }
+        else {
+            products_structs[_prod_id].currentState = States.Retired;
+            products_contracts[_prod_id].setState(uint(States.Retired));
+        }
+    }
+
+    function notifyManager(uint _prod_id) public onlyFreelancer { // finished development
+        require(_prod_id < productsNu, "Product does not exist!");
+        require(products_contracts[_prod_id].getState() == uint(States.Started));
+    
+        Product current_product = products_contracts[_prod_id];
+        
+        if (current_product.chosen_freelancer_exists(msg.sender)){
+            products_contracts[_prod_id].setState(uint(States.Finished));
+            products_structs[_prod_id].currentState = States.Finished;
+        }else{
+            revert("You are not part of the product's freelancing team!");
         }
     }
 
     function acceptResult(uint _prod_id, bool accept) public onlyManager {
-        //find the specific product
-        for (uint i=0; i<products_structs.length; i++) {
-            prodStruct memory current_product = products_structs[i];
-            if(current_product.product_id != _prod_id) {
-                continue;
-            }
+        require(_prod_id < productsNu, "Product does not exist!");
+        require(products_contracts[_prod_id].getState() == uint(States.Finished));
+        
+        Product current_product = products_contracts[_prod_id];
+        address man_addr = current_product.manager_address();
+        
+        // if manager accepts to pay freelancers
+        if(accept) {
+            users_contracts[man_addr].rep_up();
 
-            if(current_product.currentState == States.Finished) {
-                // if manager accepts to pay freelancers
-                if(accept) {
-                    for (uint j=0; j<current_product.selected_freelancers.length; j++) {
-                        address current_freelancer = current_product.selected_freelancers[j];
-                        address man_addr = current_product.manager_address;
-                        
-                        //transfer money to freelancer based on his share
-                        uint amount = (freelancers_map[current_freelancer].share * current_product.dev) / 100;
-                        tkn_mng.transferFrom(man_addr, current_freelancer, amount);
-                        //increment freelancer rep
-                        if(freelancers_map[current_freelancer].rep < 10) {
-                            freelancers_map[current_freelancer].rep += 1;
-                        }
-                    }
-                    current_product.currentState = States.Retired;
+            for (uint j=0; j<current_product.getChosenFreelancersLength(); j++) {
+                address current_freelancer = current_product.chosen_freelancers(j);
+                
+                //transfer money to freelancer based on his share
+                tkn_mng.transferFrom(man_addr, current_freelancer, freelancers_map[current_freelancer].share);
+                
+                //increment freelancer rep
+                if(freelancers_map[current_freelancer].rep < 10) {
+                    freelancers_map[current_freelancer].rep += 1;
                 }
-                else {
-                    current_product.currentState = States.Evaluation;
-                }
+                users_contracts[current_freelancer].rep_up();
             }
+            products_contracts[_prod_id].setState(uint(States.Retired));
+            products_structs[_prod_id].currentState = States.Retired;
+        }
+        else {
+            products_contracts[_prod_id].setState(uint(States.Evaluation));
+            products_structs[_prod_id].currentState = States.Evaluation;
         }
     }
 
     function evaluateProduct(uint _prod_id, bool accept) public onlyEvaluator {
-        //find the specific product
-        for (uint i=0; i<products_structs.length; i++) {
-            prodStruct memory current_product = products_structs[i];
-            if(current_product.product_id != _prod_id) {
-                continue;
-            }
-
-            if(current_product.currentState == States.Evaluation) {
-                // if evaluator accepts to pay freelancers
-                if(accept) {
-                    for (uint j=0; j<current_product.selected_freelancers.length; j++) {
-                        address current_freelancer = current_product.selected_freelancers[j];
-                        address man_addr = current_product.manager_address;
-                        
-                        //transfer money to freelancer based on his share
-                        uint amount = (freelancers_map[current_freelancer].share * current_product.dev) / 100;
-                        tkn_mng.transferFrom(man_addr, current_freelancer, amount);
-                        //increment freelancer rep
-                        if(freelancers_map[current_freelancer].rep < 10) {
-                            freelancers_map[current_freelancer].rep += 1;
-                        }
-                    }
-                    current_product.currentState = States.Retired;
-
-                    //TODO decrement manager rep
+        require(_prod_id < productsNu, "Product does not exist!");
+        require(products_contracts[_prod_id].getState() == uint(States.Evaluation));
+        Product current_product = products_contracts[_prod_id];
+        require(msg.sender == current_product.evaluator(), "You are not the evaluator for this product!");
+        
+        address man_addr = current_product.manager_address();
+        tkn_mng.transferFrom(man_addr, msg.sender, current_product.rev());
+        
+        // if evaluator accepts to pay freelancers
+        if(accept) {
+            for (uint j=0; j<current_product.getChosenFreelancersLength(); j++) {
+                address current_freelancer = current_product.chosen_freelancers(j);
+                
+                //transfer money to freelancer based on his share
+                tkn_mng.transferFrom(man_addr, current_freelancer, freelancers_map[current_freelancer].share);
+                
+                //increment freelancer rep
+                if(freelancers_map[current_freelancer].rep < 10) {
+                    freelancers_map[current_freelancer].rep += 1;
                 }
-                else {
-                    for (uint j=0; j<current_product.selected_freelancers.length; j++) {
-                        address current_freelancer = current_product.selected_freelancers[j];
-
-                        //decrement freelancer rep
-                        if(freelancers_map[current_freelancer].rep > 1) {
-                            freelancers_map[current_freelancer].rep -= 1;
-                        }
-                    }
-                    // mark the current product for redevelopment
-                    current_product.alloc_share = 0;
-                    delete current_product.selected_freelancers;
-                    current_product.currentState = States.Funding;
-                    }
+                users_contracts[current_freelancer].rep_up();
             }
+            products_contracts[_prod_id].setState(uint(States.Retired));
+            products_structs[_prod_id].currentState = States.Retired;
+            
+            if(freelancers_map[man_addr].rep > 1) {
+                    freelancers_map[man_addr].rep -= 1;
+                }
+            users_contracts[man_addr].rep_down();
         }
+        else {
+            for (uint j=0; j<current_product.getChosenFreelancersLength(); j++) {
+                address current_freelancer = current_product.chosen_freelancers(j);
+
+                //decrement freelancer rep
+                if(freelancers_map[current_freelancer].rep > 1) {
+                    freelancers_map[current_freelancer].rep -= 1;
+                }
+                users_contracts[current_freelancer].rep_down();
+            }
+            // mark the current product for redevelopment
+            products_structs[_prod_id].alloc_share = 0;
+            delete products_structs[_prod_id].applied_evaluator;
+            delete products_structs[_prod_id].applied_freelancers;
+            delete products_structs[_prod_id].selected_freelancers;
+            products_contracts[_prod_id].deleteAllFreelancersAndEvaluator();
+            
+            products_contracts[_prod_id].setState(uint(States.Teaming));
+            products_structs[_prod_id].currentState = States.Teaming;
+            }
     }
 }
