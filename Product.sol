@@ -13,6 +13,9 @@ contract Product {
     mapping (address => bool) public financer_exists;
     address[] public financers;
     uint public funded_sum;
+    address public evaluator;
+    address[] public freelancers;
+    mapping (address => bool) public freelancer_exists;
     
     enum States{ Funding, Started, Finished, Retired }
     
@@ -33,6 +36,16 @@ contract Product {
     
     function getFinancersLength() public view returns (uint) {
         return financers.length;
+    }
+    
+    function storeEvaluator(address _ev) public {
+        evaluator = _ev;
+    }
+    
+    function storeFreelancer(address _fr) public {
+        require(freelancer_exists[_fr] == false, "Freelancer is already stored!");
+        freelancers.push(_fr);
+        freelancer_exists[_fr] = true;
     }
     
     function check_sum() private {
