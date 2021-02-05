@@ -14,6 +14,7 @@ contract Marketplace {
     genericUser[] private users_structs;
     prodStruct[] private products_structs;
     ERC20token_manager private tkn_mng;
+    Factory private uf;
     uint public productsNu = 0;
     mapping(address => freelancerShare) freelancers_map;
     
@@ -53,33 +54,61 @@ contract Marketplace {
 
     constructor (Factory _uf, ERC20token_manager _tkn_mng){
         tkn_mng = _tkn_mng;
-        
-        // REMIX JavaScript VM
-        address manager_addr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
-        
-        address freelancer_0_addr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
-        address freelancer_1_addr = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;
-        address freelancer_2_addr = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB;
+        uf = _uf;
 
-        address evaluator_0_addr = 0x17F6AD8Ef982297579C203069C1DbfFE4348c372;
-        address evaluator_1_addr = 0x5c6B0f7Bf3E7ce046039Bd8FABdfD3f9F5021678;
+        address manager_addr = 0x09666EB528f0E1df658249EAC9F2f85d65A131A4;
         
-        address financer_0_addr = 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB;
-        address financer_1_addr = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
+        address freelancer_0_addr = 0x5e1ef4Abfe15695cE42B1fDaA369682D0b22807E;
+        address freelancer_1_addr = 0xBEc7ece078138344c44574DFD19E01177108f344;
+        address freelancer_2_addr = 0x7ce3Bd36bf52A1133d404EA6036389fD5e51b15F;
+
+        address evaluator_0_addr = 0xBCb67EcDfd1908E4268A2A8E1F12Eba8074BE8F6;
+        address evaluator_1_addr = 0x8F12eC61806F82B433aD62B1cD44C20d707aeCA9;
+        
+        address financer_0_addr = 0x93364590630E3dBC9e803859d55b86b682A974eD;
+        address financer_1_addr = 0xD59f510ab6908Ec362Fed6AbDe53160054F2922D;
         
         // create user contracts and store
-        storeAndAllocUser(_uf.new_manager(manager_addr, "manager"), 2000);
+        storeAndAllocUser(uf.new_manager(manager_addr, "manager"), 2000);
         
-        storeAndAllocUser(_uf.new_freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency"), 2500);
-        storeAndAllocUser(_uf.new_freelancer(freelancer_1_addr, "freelancer-1", "Games"), 3000);
-        storeAndAllocUser(_uf.new_freelancer(freelancer_2_addr, "freelancer-2", "Games"), 7500);
+        storeAndAllocUser(uf.new_freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency"), 2500);
+        storeAndAllocUser(uf.new_freelancer(freelancer_1_addr, "freelancer-1", "Games"), 3000);
+        storeAndAllocUser(uf.new_freelancer(freelancer_2_addr, "freelancer-2", "Games"), 7500);
         
-        storeAndAllocUser(_uf.new_evaluator(evaluator_0_addr, "evaluator-0", "Games"), 700);
-        storeAndAllocUser(_uf.new_evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency"), 950);
+        storeAndAllocUser(uf.new_evaluator(evaluator_0_addr, "evaluator-0", "Games"), 700);
+        storeAndAllocUser(uf.new_evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency"), 950);
         
-        storeAndAllocUser(_uf.new_financer(financer_0_addr, "financer-0"), 30000);
-        storeAndAllocUser(_uf.new_financer(financer_1_addr, "financer-2"), 50000);
+        storeAndAllocUser(uf.new_financer(financer_0_addr, "financer-0"), 30000);
+        storeAndAllocUser(uf.new_financer(financer_1_addr, "financer-2"), 50000);
     }
+
+    // function storeUsers(address[] memory _addresses) public {
+    //     // Ganache
+    //     address manager_addr = _addresses[0];
+        
+    //     address freelancer_0_addr = _addresses[1];
+    //     address freelancer_1_addr = _addresses[2];
+    //     address freelancer_2_addr = _addresses[3];
+
+    //     address evaluator_0_addr = _addresses[4];
+    //     address evaluator_1_addr = _addresses[5];
+        
+    //     address financer_0_addr = _addresses[6];
+    //     address financer_1_addr = _addresses[7];
+        
+    //     // create user contracts and store
+    //     storeAndAllocUser(uf.new_manager(manager_addr, "manager"), 2000);
+        
+    //     storeAndAllocUser(uf.new_freelancer(freelancer_0_addr, "freelancer-0", "Cryptocurrency"), 2500);
+    //     storeAndAllocUser(uf.new_freelancer(freelancer_1_addr, "freelancer-1", "Games"), 3000);
+    //     storeAndAllocUser(uf.new_freelancer(freelancer_2_addr, "freelancer-2", "Games"), 7500);
+        
+    //     storeAndAllocUser(uf.new_evaluator(evaluator_0_addr, "evaluator-0", "Games"), 700);
+    //     storeAndAllocUser(uf.new_evaluator(evaluator_1_addr, "evaluator-1", "Cryptocurrency"), 950);
+        
+    //     storeAndAllocUser(uf.new_financer(financer_0_addr, "financer-0"), 30000);
+    //     storeAndAllocUser(uf.new_financer(financer_1_addr, "financer-2"), 50000);
+    // }
     
     modifier onlyManager {
         require(users_contracts[msg.sender].role() == uint(Roles.Manager));
