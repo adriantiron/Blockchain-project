@@ -1,5 +1,5 @@
 var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'))
-var mp_contract;
+var mp_contract, accounts;
 
 
 async function init_product(sender, _description, _dev,  _rev, _category) {
@@ -69,7 +69,7 @@ async function evaluateProduct(sender, _prod_id, accept) {
 
 async function main() {
     var contracts = await getContracts();
-    var accounts = await promisify(web3.eth.getAccounts);
+    accounts = await promisify(web3.eth.getAccounts);
 
     var mp_json = contracts["Marketplace"];
 
@@ -77,19 +77,121 @@ async function main() {
     
     // let mp_store_users = await mp_contract.methods.storeUsers(accounts).call(); // does not have enough gas for this..
 
-    await init_product(accounts[0], "Description", 4000, 1000, "Games");
-    await getThisBalance();
-    await getUserProfile(accounts[0]);
-    await getProductDetails(1);
-    await finance_product(accounts[1], 1, 2000); // vm revert error....
-    await finance_product(accounts[2], 1, 2000);
-    await getThisBalance();
+    test_case_1();
+    //test_case_2();
+    //test_case_3();
+    //test_case_4();
+
 }
 
 async function getContracts() {
     var response = await fetch('http://localhost:5000/getContracts', {});
     var data = await response.json();
     return data.contracts;
+}
+
+
+async function test_case_1() {
+    await init_product(accounts[0], "Description", 12000, 1000, "Games");
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await getProductDetails(0);
+    await finance_product(accounts[6], 0, 5000);
+    await finance_product(accounts[7], 0, 7000);
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await withdraw_sum(accounts[7], 0, 2000);
+    await getUserProfile(accounts[7]);
+    await retireProduct(accounts[0], 0);
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+}
+
+async function test_case_2() {
+    await init_product(accounts[0], "Description", 12000, 1000, "Games");
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await getProductDetails(1);
+    await finance_product(accounts[6], 1, 5000);
+    await finance_product(accounts[7], 1, 8000);
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await registerForEvaluation(accounts[4], 1);
+    await registerForFreelancing(accounts[2], 1, 3000);
+    await registerForFreelancing(accounts[3], 1, 9000);
+    await selectFreelancers(accounts[0], 1);
+    await notifyManager(accounts[2], 1);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await getUserProfile(accounts[0]);
+    await acceptResult(accounts[0], 1, true);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await getUserProfile(accounts[0]);
+}
+
+async function test_case_3() {
+    await init_product(accounts[0], "Description", 12000, 1000, "Games");
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await getProductDetails(2);
+    await finance_product(accounts[6], 2, 5000);
+    await finance_product(accounts[7], 2, 8000);
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await registerForEvaluation(accounts[4], 2);
+    await registerForFreelancing(accounts[2], 2, 3000);
+    await registerForFreelancing(accounts[3], 2, 9000);
+    await selectFreelancers(accounts[0], 2);
+    await notifyManager(accounts[2], 2);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await acceptResult(accounts[0], 2, false);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await getUserProfile(accounts[0]);
+    await getUserProfile(accounts[4]);
+    await evaluateProduct(accounts[4], 2, true);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await getUserProfile(accounts[0]);
+    await getUserProfile(accounts[4]);
+}
+
+async function test_case_4() {
+    await init_product(accounts[0], "Description", 12000, 1000, "Games");
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await getProductDetails(3);
+    await finance_product(accounts[6], 3, 5000);
+    await finance_product(accounts[7], 3, 8000);
+    await getThisBalance();
+    await getUserProfile(accounts[6]);
+    await getUserProfile(accounts[7]);
+    await registerForEvaluation(accounts[4], 3);
+    await registerForFreelancing(accounts[2], 3, 3000);
+    await registerForFreelancing(accounts[3], 3, 9000);
+    await selectFreelancers(accounts[0], 3);
+    await notifyManager(accounts[2], 3);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await acceptResult(accounts[0], 3, false);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await getUserProfile(accounts[0]);
+    await getUserProfile(accounts[4]);
+    await evaluateProduct(accounts[4], 3, false);
+    await getUserProfile(accounts[2]);
+    await getUserProfile(accounts[3]);
+    await getUserProfile(accounts[0]);
+    await getUserProfile(accounts[4]);
 }
 
 
